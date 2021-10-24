@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react'
 import {Link } from 'react-router-dom'
 
-let hostUrl =process.env.REACT_APP_SERVER_URL
+
 
 const Post =(props)=>{
 
@@ -29,7 +29,7 @@ const Post =(props)=>{
         setNoImg(true)
     }
     else{
-      setImgUrl(hostUrl+data.image.url)
+      setImgUrl(data.image.url)
     }
     
 
