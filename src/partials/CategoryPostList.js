@@ -69,7 +69,7 @@ const sortedList= formatList.sort((a,b) =>b.date.getTime() -  a.date.getTime())
         <div className="mt-10">
 
 
-                <h3 className="mb-2 border-b-2 border-red-400 text-bold md:text-3xl">{props.keywords}</h3>
+                <h3 className="mb-2 border-b-2 border-red-400 text-bold md:text-2xl lg:text-3xl">{props.keywords}</h3>
             <div className={`${props.grid? "md:grid grid-cols-2":""}`}>
             {
                 sortedList.map(post =>(

@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react'
 import {Link } from 'react-router-dom'
 
-let hostUrl ="http://localhost:1337"
+let hostUrl =process.env.REACT_APP_SERVER_URL
 
 const OldPost =(props)=>{
 
@@ -31,7 +31,7 @@ const OldPost =(props)=>{
   }, [data, props])
 
     return(
-        <article  className={`bg-white rounded-md p-2 md:p-4 overflow-hidden mr-2 max-w-sm md:max-w-none ${mbNone? "" :"mb-4"} ${pbNone? "" :"pb-4"}  ${props.small? "max-h-52 md:max-h-screen" : "max-h-80  md:max-h-screen"} ${props.borderBottom ? "border-b-2" : "" }`}>
+        <article  className={`bg-white rounded-md p-2 md:p-4 overflow-hidden mr-2 max-w-sm md:max-w-none ${mbNone? "" :"mb-4"} ${pbNone? "" :"pb-4"}  ${props.small? "max-h-52 sm:max-h-72 md:max-h-screen" : "max-h-80 sm:max-h-96  md:max-h-screen"} ${props.borderBottom ? "border-b-2" : "" }`}>
 
                   {
                       !noImg?(
@@ -48,10 +48,10 @@ const OldPost =(props)=>{
 
       
 
-                  <h3 className="mb-2 md:mb-4 text-sm md:text-2xl text-bold">
+                  <h3 className="mb-2 md:mb-4 text-sm sm:text-lg lg:text-xl text-bold">
                       <Link  to={`/post/${data.slug}/${data.id}`} className=" text-black hover:text-purple-600 transition duration-150 ease-in-out overflow-ellipsis">{data.title}</Link>
                   </h3>
-                    <p className="text-xs md:text-base text-gray-40">
+                    <p className="text-xs sm:text-sm lg:text-base text-gray-40">
                           { data.description }
                     </p>
 

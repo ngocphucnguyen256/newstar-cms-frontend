@@ -8,7 +8,7 @@ import 'moment/locale/vi';
 
     
 const client= new ApolloClient({
-  uri:'http://localhost:1337/graphql',
+  uri:`${process.env.REACT_APP_SERVER_URL}/graphql`,
   cache: new InMemoryCache()
 });
 

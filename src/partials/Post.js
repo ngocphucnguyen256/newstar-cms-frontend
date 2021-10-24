@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react'
 import {Link } from 'react-router-dom'
 
-let hostUrl ="http://localhost:1337"
+let hostUrl =process.env.REACT_APP_SERVER_URL
 
 const Post =(props)=>{
 
@@ -41,13 +41,13 @@ const Post =(props)=>{
             {
               headingTop?(
                 <>
-                <h3 className=" mb-2 text-sm md:text-2xl text-bold">
+                <h3 className=" mb-2 text-sm sm:text-lg lg:text-xl text-bold">
                         <Link to={`/post/${data.slug}/${data.id}`} className="hover:text-blue-600 transition duration-150 ease-in-out">{data.title}</Link>
                 </h3>
-                <p className={`${noImg ? "w-0" : " md:w-1/1"}  w-1/1 text-xs md:text-base`}>
+                <p className={`${noImg ? "w-0" : " md:w-1/1"}  w-1/1 text-xs sm:text-sm md:text-base`}>
                  {!noImg ? (
                     <Link  to={`/post/${data.slug}/${data.id}`} className={`h-1/1 mr-2 mb-1 md:w-2/3 float-left`}>
-                          <img className={` rounded-md transform hover:scale-105 transition duration-700 ease-out ${props.small ? "w-24 md:w-auto" : " w-52  md:w-auto"}`} src={imgUrl} alt={data.id} />
+                          <img className={` rounded-md transform hover:scale-105 transition duration-700 ease-out ${props.small ? "w-24 sm:w-40  md:w-auto" : " w-52  md:w-auto"}`} src={imgUrl} alt={data.id} />
                     </Link>
                 ) : (
                   <></>
@@ -65,15 +65,15 @@ const Post =(props)=>{
                   <></>
                 ):(
                   <>
-                    <p className={`${noImg ? "w-0" : " md:w-1/1"}  w-1/1 text-xs md:text-base`}>
+                    <p className={`${noImg ? "w-0" : " md:w-1/1"}  w-1/1 text-xs sm:text-sm md:text-base`}>
                         {!noImg ? (
                             <Link to={`/post/${data.slug}/${data.id}`} className={`h-1/1 mr-2 mb-1 md:w-2/3 float-left`}>
-                                  <img className={` rounded-md transform hover:scale-105 transition duration-700 ease-out ${props.small ? "w-24 md:w-auto" : "w-52   md:w-auto"}`} src={imgUrl} alt={data.id} />
+                                  <img className={` rounded-md transform hover:scale-105 transition duration-700 ease-out ${props.small ? "w-24 sm:w-40 md:w-auto" : "w-52   md:w-auto"}`} src={imgUrl} alt={data.id} />
                             </Link>
                         ) : (
                           <></>
                         )}
-                        <h3 className=" mb-2 text-sm md:text-2xl text-bold">
+                        <h3 className=" mb-2 text-sm sm:text-lg lg:text-xl text-bold">
                                 <Link to={`/post/${data.slug}/${data.id}`} className="hover:text-blue-600 transition duration-150 ease-in-out">{data.title}</Link>
                         </h3>
                         {data.description}

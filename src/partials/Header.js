@@ -192,12 +192,12 @@ function Header() {
                           <img alt="star"  src={require('../logo/star_logo.png').default} className="md:w-28" width="70" height="auto"/>
                         </Link>
                       </div>
-                      <div className="hidden md:block">
+                      <div className="hidden md:block text-sm">
                       <Moment date={today} format="dddd, MMMM Do YYYY" locale="vi" />
                       </div>
             </div>
             <div className="flex justify-center items-center md:ml-auto">
-                    <div className="relative hidden md:block mr-4">
+                    <div className="relative hidden lg:block mr-4">
                     <input type="text" className="rounded-2xl bg-transparent "/>
                       <a href="#search" className="absolute right-1 top-1/2 transform -translate-y-1/2 w-8 h-auto">
                           <img src={searchIcon} alt="Search"/>
@@ -205,7 +205,7 @@ function Header() {
 
                   </div>
                               {/* Desktop sign in links */}
-                    <ul className="flex flex-grow justify-end flex-wrap items-center text-sm md:text-lg">
+                    <ul className="flex flex-grow justify-end flex-wrap items-center text-sm md:text-base lg:text-lg">
                       <li>
                         <Link to="/signin" className="font-medium py-2 flex items-center transition duration-150 ease-in-out">Đăng nhập</Link>
                       </li>
@@ -233,58 +233,58 @@ function Header() {
 
 
 
-            <ul className="flex flex-grow justify-center flex-wrap items-center md:text-lg text-bold">
+            <ul className="flex flex-grow justify-center flex-wrap items-center md:text-base lg:text-lg text-bold">
               <li>
-                <Link to="/" className=" text-black hover:text-purple-600 px-3  py-2 flex">
+                <Link to="/" className=" text-black hover:text-purple-600 px-1 md:px-2 lg:px-3  py-1 lg:py-2 flex">
                 Trang chủ
                 </Link>
               </li>
               <li>
-                <Link to="/newest" className=" text-black hover:text-purple-600 px-3 py-2 flex">Mới nhất
+                <Link to="/newest" className=" text-black hover:text-purple-600 px-1 md:px-2 lg:px-3 py-1 lg:py-2 flex">Mới nhất
 </Link>
               </li>
               <li>
-                <Link to="/kinh-te" className=" text-black hover:text-purple-600 px-3 py-2 flex">Kinh tế
+                <Link to="/kinh-te" className=" text-black hover:text-purple-600 px-1 md:px-2 lg:px-3 py-1 lg:py-2 flex">Kinh tế
 </Link>
               </li>
               <li>
-                <Link to="/giai-tri" className=" text-black hover:text-purple-600 px-3 py-2 flex">Giải trí 
+                <Link to="/giai-tri" className=" text-black hover:text-purple-600 px-1 md:px-2 lg:px-3 py-1 lg:py-2 flex">Giải trí 
 </Link>
               </li>
               {/* 1st level: hover */}
 
                 {/* 2nd level: hover */}
                 <li>
-                  <Link to="/cong-nghe" className=" text-black hover:text-purple-600 flex py-2 px-3">Công nghệ
+                  <Link to="/cong-nghe" className=" text-black hover:text-purple-600 flex py-1 lg:py-2 px-1 md:px-2 lg:px-3">Công nghệ
 </Link>
                 </li>
                 <li>
-                  <Link to="/the-thao" className=" text-black hover:text-purple-600 flex py-2 px-3">Thể thao
+                  <Link to="/the-thao" className=" text-black hover:text-purple-600 flex py-1 lg:py-2 px-1 md:px-2 lg:px-3">Thể thao
                 </Link>
                 </li>
                 <li>
-                  <Link to="/vh-xh" className=" text-black hover:text-purple-600 flex py-2 px-3">VH-XH</Link>
+                  <Link to="/vh-xh" className=" text-black hover:text-purple-600 flex py-1 lg:py-2 px-1 md:px-2 lg:px-3">VH-XH</Link>
                 </li>
                 <li>
-                  <Link to="/thoi-trang" className=" text-black hover:text-purple-600 flex py-2 px-3">Thời trang</Link>
+                  <Link to="/thoi-trang" className=" text-black hover:text-purple-600 flex py-1 lg:py-2 px-1 md:px-2 lg:px-3">Thời trang</Link>
                 </li>
                 <li>
-                  <Link to="/hang-hieu" className=" text-black hover:text-purple-600 flex py-2 px-3">Hàng Hiệu
+                  <Link to="/hang-hieu" className=" text-black hover:text-purple-600 flex py-1 lg:py-2 px-1 md:px-2 lg:px-3">Hàng Hiệu
 </Link>
                 </li>
                 <li>
-                  <Link to="/du-lich" className=" text-black hover:text-purple-600 flex py-2 px-3">Du lịch</Link>
+                  <Link to="/du-lich" className=" text-black hover:text-purple-600 flex py-1 lg:py-2 px-1 md:px-2 lg:px-3">Du lịch</Link>
                 </li>
                 <li>
-                  <Link to="/am-thuc" className=" text-black hover:text-purple-600 flex py-2 px-3">
+                  <Link to="/am-thuc" className=" text-black hover:text-purple-600 flex py-1 lg:py-2 px-1 md:px-2 lg:px-3">
 Ẩm thực</Link>
                 </li>
                 <li>
-                  <Link to="/song-khoe" className=" text-black hover:text-purple-600 flex py-2 px-3">Sống khỏe
+                  <Link to="/song-khoe" className=" text-black hover:text-purple-600 flex py-1 lg:py-2 px-1 md:px-2 lg:px-3">Sống khỏe
 </Link>
                 </li>
                 <li>
-                  <Link to="/video" className=" text-black hover:text-purple-600 flex py-2 px-3">Video</Link>
+                  <Link to="/video" className=" text-black hover:text-purple-600 flex py-1 lg:py-2 px-1 md:px-2 lg:px-3">Video</Link>
                 </li>
 
             </ul>

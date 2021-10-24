@@ -50,9 +50,9 @@ const PostList =()=>{
     return(
         <div className="mt-4 md:mt-10">
 
-            <div className="md:flex justify-between items-stretch mb-4 bg-gray-100">
+            <div className="sm:flex justify-between items-stretch mb-4 bg-gray-100">
                 <Post data={data.articles[0]} pbNone mbNone line={12}/>
-                <img src={adImg} alt='adsimg' className="w-1/3 h-auto hidden md:block bg-white md:ml-4"/>
+                <img src={adImg} alt='adsimg' className="w-1/3 h-auto hidden sm:block bg-white md:ml-4"/>
             </div>
             <div className="flex items-stretch justify-between">
             {

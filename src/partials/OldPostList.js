@@ -60,9 +60,9 @@ const sortedList= formatList.sort((a,b) =>b.date.getTime() -  a.date.getTime())
     return(
         <div className="mt-5 md:mt-10  border-b-2 bg-gray-200 p-2 md:p-4 rounded-md">
 
-            <h3 className="mb-10 border-b-2 border-red-400 text-bold md:text-3xl mt-10">Các tin tức cũ hơn</h3>   
+            <h3 className="mb-10 border-b-2 border-red-400 text-bold md:text-2xl lg:text-3xl mt-10">Các tin tức cũ hơn</h3>   
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-4">
             {
                 sortedList.map(post =>(
                     <OldPost key={post.id} data={post}  borderBottom headingTop line={5}/>

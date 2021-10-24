@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 function Footer() {
   return (
-    <footer className= "mt-10 pb-20 text-center md:text-base md:mx-52  border-t-2 pt-2">
+    <footer className= "mt-10 pb-20 text-center md:text-base lg:mx-52  border-t-2 pt-2">
         <div>
             <p className="mb-4 md:text-lg">Liên hệ</p>
             <ul className="flex border-b-2 pb-2 mb-2 justify-center">
@@ -29,7 +29,7 @@ function Footer() {
                   <a href="# " title="Image from freeiconspng.com" className="mr-2"><img src="https://www.freeiconspng.com/uploads/twitter-icon-download-18.png" width="18" alt="Bird, blue, Logo Twitter PNG" /></a>
                   <a href="# " title="Image from freeiconspng.com"><img src="https://www.freeiconspng.com/uploads/youtube-dark-icon-16.png" width="18" alt="youtube dark icon" /></a>
             </div>
-            <p className="text-sm md:text-lg  ">Giấy phép thiết lập TTTĐTsố 42/GP-STTTT - Chịu trách nhiệm nội dung : NGUYỄN TẤN HÙNG ANH</p>
+            <p className="text-sm md:text-base lg:text-lg  ">Giấy phép thiết lập TTTĐTsố 42/GP-STTTT - Chịu trách nhiệm nội dung : NGUYỄN TẤN HÙNG ANH</p>
         </div>
     </footer>
   );

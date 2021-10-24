@@ -40,25 +40,29 @@ const Video =()=>{
 
     return(
         <div className="mt-4 bg-yellow-100 p-3  rounded-lg" id="video">
-            <ul className="hidden md:flex items-baseline py-4 ">
+            <ul className="hidden md:flex items-baseline py-4 flex-wrap">
                 <h3 className="text-bold text-2xl mr-4">Video</h3>
-                <li className="mr-4 hover:text-purple-600  cursor-pointer text-bold" onClick={(e)=>handleMenuClick(e.target)} value={1}>Thời sự</li>
-                <li  className="mr-4 hover:text-purple-600 cursor-pointer text-bold" onClick={(e)=>handleMenuClick(e.target)} value={2}>Nhịp sống</li>
-                <li  className="mr-4 hover:text-purple-600 cursor-pointer text-bold" onClick={(e)=>handleMenuClick(e.target)}>Food</li>
-                <li  className="mr-4 hover:text-purple-600 cursor-pointer text-bold" onClick={(e)=>handleMenuClick(e.target)}>Cuộc sống 4.0</li>
-                <li  className="mr-4 hover:text-purple-600 cursor-pointer text-bold" onClick={(e)=>handleMenuClick(e.target)}>Tôi kể</li>
-                <li className="mr-4 hover:text-purple-600 cursor-pointer text-bold" onClick={(e)=>handleMenuClick(e.target)}>Chuyện núi rừng</li>
-                <li className="mr-4 hover:text-purple-600 cursor-pointer text-bold" onClick={(e)=>handleMenuClick(e.target)}>Nguy cơ</li>
+                <li className="mr-2 lg:mr-4 hover:text-purple-600  cursor-pointer text-bold" onClick={(e)=>handleMenuClick(e.target)} value={1}>Thời sự</li>
+                <li  className="mr-2 lg:mr-4 hover:text-purple-600 cursor-pointer text-bold" onClick={(e)=>handleMenuClick(e.target)} value={2}>Nhịp sống</li>
+                <li  className="mr-2 lg:mr-4 hover:text-purple-600 cursor-pointer text-bold" onClick={(e)=>handleMenuClick(e.target)}>Food</li>
+                <li  className="mr-2 lg:mr-4 hover:text-purple-600 cursor-pointer text-bold" onClick={(e)=>handleMenuClick(e.target)}>Cuộc sống 4.0</li>
+                <li  className="mr-2 lg:mr-4 hover:text-purple-600 cursor-pointer text-bold" onClick={(e)=>handleMenuClick(e.target)}>Tôi kể</li>
+                <li className="mr-2 lg:mr-4 hover:text-purple-600 cursor-pointer text-bold" onClick={(e)=>handleMenuClick(e.target)}>Chuyện núi rừng</li>
+                <li className="mr-2 lg:mr-4 hover:text-purple-600 cursor-pointer text-bold" onClick={(e)=>handleMenuClick(e.target)}>Nguy cơ</li>
 
             </ul>
-            <div className="overflow-hidden">
+                   {/* slider*/}
+
+            <div className="overflow-hidden md:pb-5">
                 <div className={`flex  transition duration-200 ease-in-out transform ${slide===1? "translate-x-0" : ""}  ${slide===2? "-translate-x-full" : ""}`}>
                     <div className="flex justify-between mb-10 flex-grow flex-shrink-0 w-1/1  ">
                         <div className="w-1/1">
-                            <iframe className="md:h-1/1 md:w-11/12" width="100%" height="300px" src={`https://www.youtube.com/embed/${nowPlaying.id}`} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                            <iframe className="md:h-96 md:w-1/1 xl:w-11/12" width="100%" height="300px" src={`https://www.youtube.com/embed/${nowPlaying.id}`} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                             <p className="my-2 font-bold">{nowPlaying.title}</p>
                         </div>
-                        <div className="md:flex flex-col justify-between items-center w-1/3 mr-6 hidden">
+                        
+                   {/* nav col  2*/}
+                        <div className="xl:flex flex-col justify-between items-center w-1/3 mr-6 hidden">
                                 {
                                     videos.map((video, index) =>{
                                         return(
@@ -74,10 +78,14 @@ const Video =()=>{
                     </div>
                     <div className="flex justify-between mb-10  flex-grow flex-shrink-0 w-1/1 ">
                     <div className="w-1/1">
-                        <iframe className="md:h-1/1 md:w-11/12" width="100%" height="300px" src={`https://www.youtube.com/embed/${nowPlaying.id}`} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                        <iframe className="md:h-96 md:w-1/1  xl:w-11/12" width="100%" height="300px" src={`https://www.youtube.com/embed/${nowPlaying.id}`} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                         <p className="my-2 font-bold">{nowPlaying.title}</p>
                     </div>
-                    <div className="md:flex flex-col justify-between items-center w-1/3 mr-6 hidden">
+
+
+                   {/* nav col  2*/}
+
+                    <div className=" flex-col justify-between items-center w-1/3 mr-6 hidden xl:flex">
                             {
                                 videos.map((video, index) =>{
                                     return(
@@ -95,18 +103,23 @@ const Video =()=>{
                 </div>
             </div>
 
+
+           {/* social*/}
+            
             <div className="flex items-center justify-between mb-2">
                   <a href="# " className="bg-blue-600 flex items-center text-white rounded-sm p-1 text-xs"><img src="https://www.freeiconspng.com/uploads/facebook-like-icon--3.png" width="18" alt="facebook Like icon " />Thích 156</a>
                   <a href="# " title="Image from freeiconspng.com" className="ml-auto mr-2 md:mr-4"><img src="https://www.freeiconspng.com/uploads/facebook-logo-3.png" width="18" alt="Facebook Logo HD PNG Pic" /></a>
                   <a className="" href="# " title="Image from freeiconspng.com"><img src="https://www.freeiconspng.com/uploads/twitter-icon-download-18.png" width="18" alt="Bird, blue, Logo Twitter PNG" /></a>
             </div>
             <a className="flex items-center justify-center bg-gray-100 rounded-lg" href="https://www.youtube.com/c/NewstarChannel102/featured" title="youtube">Theo dõi trên <img src="https://www.freeiconspng.com/uploads/youtube-logo-png-transparent-image-5.png" width="100" alt="Youtube Logo PNG Transparent" /></a>
-            <div className="flex items-center justify-between mt-4 flex-wrap md:hidden">
+
+           {/* nav row */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-1 mt-4 xl:hidden">
                 {
                     videos.map((video, index) =>{
                         return(
-                            <div key={index} className="w-1/2 p-2" onClick={(e)=>handleClick(e.target)} id={video.id} title={video.title}>
-                                    <img className="rounded-sm" src={`https://img.youtube.com/vi/${video.id}/default.jpg`} alt="YouTube"  id={video.id} title={video.title}/>
+                            <div key={index} className=" p-2 md:p-4" onClick={(e)=>handleClick(e.target)} id={video.id} title={video.title}>
+                                    <img className="rounded-sm mb-2" src={`https://img.youtube.com/vi/${video.id}/default.jpg`} alt="YouTube"  id={video.id} title={video.title}/>
                                     <p className="text-xs"  id={video.id} title={video.title}>{video.title}</p>
                             </div>
                         )
