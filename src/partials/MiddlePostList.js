@@ -41,7 +41,6 @@ const MiddlePostList =()=>{
 
     const temp=[...data.articles]
 
-
     
     const formatList =  temp.map(post=>{
 
@@ -58,7 +57,7 @@ const sortedList= formatList.sort((a,b) =>b.date.getTime() -  a.date.getTime())
     return(
         <div className="mt-10 flex border-b-2">
 
-            <div className="mb-10  justify-between items-center border-r-2 pr-2 md:pr-4 w-1/2">
+            <div className="mb-10  justify-between items-center border-r-2 pr-2 md:pr-4 w-1/3">
             <h3 className="mb-2 border-b-2 border-red-400 text-bold md:text-2xl lg:text-3xl mt-10">Mới nhất</h3>   
             {
                 sortedList.map(post =>(
@@ -72,7 +71,7 @@ const sortedList= formatList.sort((a,b) =>b.date.getTime() -  a.date.getTime())
                 ))
             }
             </div>
-            <div className="w-1/2 pl-2 md:pl-4">
+            <div className="w-2/3 pl-2 md:pl-4">
                 <CategoryPostList keywords={"Kinh tế"} small/>
                 <CategoryPostList keywords={"Giải trí"} small/>
                 <CategoryPostList keywords={"Công nghệ"}small/>
