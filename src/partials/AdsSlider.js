@@ -50,7 +50,6 @@ const AdsSlider = (props) => {
       )
   }
 
-  console.log(data.ads);
 
     return (
           <div>
