@@ -2,9 +2,9 @@ import { useParams } from 'react-router-dom'
 import {useQuery, gql} from '@apollo/client'
 import marked from 'marked';
 import AdsSlider from '../partials/AdsSlider';
+import Ads from '../partials/Ads'
 import Header from '../partials/Header';
 import Footer from '../partials/Footer';
-import adImg from '../images/news-01.jpg'
 import '../css/PostDetail.css'
 
 
@@ -77,32 +77,37 @@ const PostDetail =()=>{
 
 
     return(    
-        <div className="mx-10 lg:mx-20 mb-10 md:mb-0" id="top">
-        <div className="mb-2 ">
+        <div className=" mb-10 md:mb-0" id="top">
+        <div className="mb-2 mx-10 lg:mx-20">
            <AdsSlider location="menu"/>
         </div>
         <Header />
-        <main className="flex-grow">
-                            <article  className={`overflow-hidden mr-2  border-b-2`}>
+        <div className="flex justify-between  my-10">
+             <Ads   index={0}location="leftpost"/>                            
+            <main className="w-5/6 mx-4">
+                                <article  className={`overflow-hidden mr-2  border-b-2`}>
 
-                            <h3 className=" mb-2 md:mb-10 text-sm md:text-2xl text-bold mt-10">
-                               {data.article.title}
-                            </h3>
-                 
-                            {!noImg ? (
-                                <img className={` rounded-md transform hover:scale-105 transition duration-700 ease-out h-1/1 mb-10 md:w-2/3`} src={imgUrl} alt={data.article.id} />
-                            ) : (
-                            <></>
-                            )}
-                        <p className={`${noImg ? "w-0" : " md:w-1/1"}  w-1/1 text-xs md:text-base mb-10`}>
-                            {data.article.description}
+                                <h3 className=" mb-2 md:mb-10 text-sm md:text-2xl text-bold mt-10">
+                                {data.article.title}
+                                </h3>
+                    
+                                {!noImg ? (
+                                    <img className={` rounded-md transform hover:scale-105 transition duration-700 ease-out h-1/1 mb-10 md:w-2/3`} src={imgUrl} alt={data.article.id} />
+                                ) : (
+                                <></>
+                                )}
+                            <p className={`${noImg ? "w-0" : " md:w-1/1"}  w-1/1 text-xs md:text-base mb-10`}>
+                                {data.article.description}
 
-                            </p>
-                            <div dangerouslySetInnerHTML={markedParser(data.article.content)} className="markedHTML"/>
-                            </article>
-          <a className="fixed bottom-10 right-10" href="#top" title="Image from freeiconspng.com"><img src="https://www.freeiconspng.com/uploads/arrow-icon-clip-art-file-down-arrow-icon-png-balin-icon-arrow-right--32.png" width="50" alt="top" /></a>
-        </main>
+                                </p>
+                                <div dangerouslySetInnerHTML={markedParser(data.article.content)} className="markedHTML"/>
+                                </article>
+            <a className="fixed bottom-10 right-10" href="#top" title="Image from freeiconspng.com"><img src="https://www.freeiconspng.com/uploads/arrow-icon-clip-art-file-down-arrow-icon-png-balin-icon-arrow-right--32.png" width="50" alt="top" /></a>
+            </main>
+            <Ads   index={0}location="rightpost"/>                            
+        </div>
 
+        <div  className="mx-10 lg:mx-20"><Ads index={0}location="bottompost"/>  </div>                          
         <Footer />
   
       </div>

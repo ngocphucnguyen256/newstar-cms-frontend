@@ -57,7 +57,7 @@ const Ads = (props) => {
 }
 
     return (
-          <div>
+        <div>
                <iframe  className="flex items-center justify-center bg-cover w-1/1 h-1/1" frameBorder="0"  src={data.ads[props.index].url}  title="3rd party ad content" name="" scrolling="no" marginWidth="0"
                 marginHeight="0" data-is-safeframe="true" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation"  ></iframe>
         </div>
