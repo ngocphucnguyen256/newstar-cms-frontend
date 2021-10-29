@@ -36,7 +36,7 @@ function Header() {
   });
 
   return (
-    <header className="sticky top-0 md:-top-24 left-0 right-0 w-full z-30 bg-white text-black ">
+    <header className="sticky top-0 md:-top-24 left-0 right-0 w-full z-30 bg-white text-black font-bold ">
       
       <div className="max-w-7xl mx-auto">
   

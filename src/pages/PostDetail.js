@@ -1,12 +1,12 @@
-import {Link, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import {useQuery, gql} from '@apollo/client'
+import marked from 'marked';
 
 import Header from '../partials/Header';
 import Footer from '../partials/Footer';
 import adImg from '../images/news-01.jpg'
 
 
-let hostUrl ="http://localhost:1337"
 
 
 const POST =gql`
@@ -25,10 +25,15 @@ query GetPost($id: ID!){
             url
         },
         created_at,
-        slug
+        slug,
+        content
     }
 }
 `
+const markedParser =(content)=>{
+    var rawMarkup = marked(content, {sanitize: true});
+    return { __html: rawMarkup };
+}
 
 
 const PostDetail =()=>{
@@ -56,6 +61,7 @@ const PostDetail =()=>{
         )
     }
 
+    console.log(data);
 
 
 
@@ -63,11 +69,9 @@ const PostDetail =()=>{
         noImg=true
     }
     else{
-      imgUrl=hostUrl+data.article.image.url
+      imgUrl=data.article.image.url
     }
     
-
-
 
 
 
@@ -79,22 +83,22 @@ const PostDetail =()=>{
         </div>
         <Header />
         <main className="flex-grow">
-                            <article  className={`overflow-hidden mr-2 max-w-sm md:max-w-none md:max-h-screen border-b-2`}>
+                            <article  className={`overflow-hidden mr-2  border-b-2`}>
 
-                            <h3 className=" mb-2 text-sm md:text-2xl text-bold">
-                                    <Link to="/" className="hover:text-blue-600 transition duration-150 ease-in-out">{data.article.title}</Link>
+                            <h3 className=" mb-2 md:mb-10 text-sm md:text-2xl text-bold mt-10">
+                               {data.article.title}
                             </h3>
-                            <p className={`${noImg ? "w-0" : " md:w-1/1"}  w-1/1 text-xs md:text-base`}>
+                 
                             {!noImg ? (
-                                <Link to="/" className={`h-1/1 mr-2 mb-1 md:w-2/3 float-left`}>
-                                    <img className={` rounded-md transform hover:scale-105 transition duration-700 ease-out `} src={imgUrl} alt={data.article.id} />
-                                </Link>
+                                <img className={` rounded-md transform hover:scale-105 transition duration-700 ease-out h-1/1 mb-10 md:w-2/3`} src={imgUrl} alt={data.article.id} />
                             ) : (
                             <></>
                             )}
+                        <p className={`${noImg ? "w-0" : " md:w-1/1"}  w-1/1 text-xs md:text-base mb-10`}>
                             {data.article.description}
 
                             </p>
+                            <div dangerouslySetInnerHTML={markedParser(data.article.content)} />
                             </article>
           <a className="fixed bottom-10 right-10" href="#top" title="Image from freeiconspng.com"><img src="https://www.freeiconspng.com/uploads/arrow-icon-clip-art-file-down-arrow-icon-png-balin-icon-arrow-right--32.png" width="50" alt="top" /></a>
         </main>
