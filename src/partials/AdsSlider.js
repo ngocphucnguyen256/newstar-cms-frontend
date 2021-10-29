@@ -5,10 +5,12 @@ import 'react-slideshow-image/dist/styles.css'
 
 const GETADS =gql`
 query GetAds($location: String!){
-  ads(location: $location){
-        id,
-        url
-  }
+    ads(where:{
+      location: $location
+    }){
+          id,
+          url
+    }
 }
 `
 
