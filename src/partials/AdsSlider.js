@@ -50,23 +50,23 @@ const AdsSlider = (props) => {
       )
   }
 
-  console.log(data);
+  console.log(data.ads);
 
     return (
           <div>
           <Slide easing="ease" duration={2000}>
-            <div className="each-slide">
-              <iframe  className="flex items-center justify-center bg-cover h-20 md:h-40 lg:h-52 w-1/1" frameBorder="0"  src={props.url}  title="3rd party ad content" name="" scrolling="no" marginWidth="0"
-               marginHeight="0" data-is-safeframe="true" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation"  ></iframe>
-            </div>
-            <div className="each-slide">
-              <iframe  className="flex items-center justify-center bg-cover h-20 md:h-40 lg:h-52 w-1/1" frameBorder="0"  src={props.url}  title="3rd party ad content" name="" scrolling="no" marginWidth="0"
-                marginHeight="0" data-is-safeframe="true" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation"  ></iframe>
-            </div>
-            <div className="each-slide">
-                <iframe  className="flex items-center justify-center bg-cover h-20 md:h-40 lg:h-52 w-1/1" frameBorder="0"  src={props.url}  title="3rd party ad content" name="" scrolling="no" marginWidth="0"
-                  marginHeight="0" data-is-safeframe="true" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation"  ></iframe>
-            </div>
+            {
+              data.ads.map(item=>{
+                  return (
+                    <div key={item.id} className="each-slide">
+                       <iframe  className="flex items-center justify-center bg-cover h-20 md:h-40 lg:h-52 w-1/1" frameBorder="0"  src={item.url}  title="3rd party ad content" name="" scrolling="no" marginWidth="0"
+                        marginHeight="0" data-is-safeframe="true" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation"  ></iframe>
+                  </div>
+                  )
+              })
+            }
+
+
           </Slide>
         </div>
       

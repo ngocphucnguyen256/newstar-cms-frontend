@@ -1,8 +1,8 @@
 import PostList from '../partials/PostList';
 import MiddlePostList from '../partials/MiddlePostList';
-import adImg from '../images/news-01.jpg'
 import Video from '../partials/Video';
 import OldPostList from '../partials/OldPostList';
+import Ads from './Ads'
 
 const BodySection =()=>{
 
@@ -20,15 +20,15 @@ return(
             <p className="text-pink-700 underline  md:text-sm "><a href="# ">Gỡ khó khăn cho doanh nghiệp, tiểu thương TP. HCM</a></p>
         </div>
         <div className="mb-2 ">
-         <img className="h-24 w-1/1 md:w-screen md:h-40" src={adImg} alt="ad" />
+            <Ads className="h-24 w-1/1 md:w-screen md:h-40" index={0}location="keyword"/>
       </div>
         <Video/>
         <div className="mb-2 ">
-         <img className="h-24 w-1/1 md:w-screen md:h-40" src={adImg} alt="ad" />
+            <Ads className="h-24 w-1/1 md:w-screen md:h-40" index={0}location="video"/>
         </div>
         <OldPostList/>
         <div className="mb-2 ">
-         <img className="h-24 w-1/1 md:w-screen md:h-40" src={adImg} alt="ad" />
+            <Ads className="h-24 w-1/1 md:w-screen md:h-40" index={0}location="footer"/>
         </div>
     </div>
 )

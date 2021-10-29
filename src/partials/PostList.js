@@ -1,6 +1,6 @@
 import Post from './Post'
 import { useQuery, gql } from '@apollo/client'
-import adImg from '../images/news-01.jpg'
+import Ads from './Ads'
 
 const POSTS =gql`
 query GetPosts{
@@ -52,7 +52,7 @@ const PostList =()=>{
 
             <div className="sm:flex justify-between items-stretch mb-4 bg-gray-100">
                 <Post data={data.articles[0]} pbNone mbNone line={12}/>
-                <img src={adImg} alt='adsimg' className="w-1/3 h-auto hidden sm:block bg-white md:ml-4"/>
+                <Ads  className="w-1/3 h-auto hidden sm:block bg-white md:ml-4" index={0}location="headerpost"/>
             </div>
             <div className="flex items-stretch justify-between">
             {
@@ -60,7 +60,7 @@ const PostList =()=>{
                     <div  key={post.id} className="w-1/3 "><Post key={post.id} data={post}  line={10}/></div>
                 ))
             }
-               <img src={adImg} alt='adsimg' className="w-1/3 h-auto border-l-2 pl-2"/>
+                <Ads   className="w-1/3 h-auto border-l-2 pl-2" index={1} location="headerpost"/>
             </div>
         </div>
     )

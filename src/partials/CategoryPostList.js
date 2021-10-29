@@ -1,6 +1,7 @@
 import Post from './Post'
 import { useQuery, gql } from '@apollo/client'
-import adImg from '../images/news-01.jpg'
+import Ads from './Ads'
+
 
 
 const POSTS =gql`
@@ -79,7 +80,7 @@ const sortedList= formatList.sort((a,b) =>b.date.getTime() -  a.date.getTime())
             </div>
       
             <div className="my-4 ">
-                <img className="h-28 w-1/1 md:w-screen md:h-52 " src={adImg} alt="ad" />
+                <Ads  className="h-28 w-1/1 md:w-screen md:h-52 " index={0} location="middlepost"/>
             </div>
         </div>
     )

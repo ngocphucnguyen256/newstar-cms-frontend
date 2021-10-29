@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom'
 import {useQuery, gql} from '@apollo/client'
 import marked from 'marked';
-
+import AdsSlider from '../partials/AdsSlider';
 import Header from '../partials/Header';
 import Footer from '../partials/Footer';
 import adImg from '../images/news-01.jpg'
@@ -79,7 +79,7 @@ const PostDetail =()=>{
     return(    
         <div className="mx-10 lg:mx-20 mb-10 md:mb-0" id="top">
         <div className="mb-2 ">
-           <img className="h-24 w-1/1 md:w-screen md:h-40" src={adImg} alt="ad" />
+           <AdsSlider location="menu"/>
         </div>
         <Header />
         <main className="flex-grow">
