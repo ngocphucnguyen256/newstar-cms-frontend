@@ -76,12 +76,12 @@ const sortedList= formatList.sort((a,b) =>b.date.getTime() -  a.date.getTime())
                 <CategoryPostList keywords={"Giải trí"} small/>
                 <CategoryPostList keywords={"Công nghệ"}small/>
                 <CategoryPostList keywords={"Thể thao"}small/>
-                <CategoryPostList keywords={"Văn hóa - xã hội"}small/>
+                {/* <CategoryPostList keywords={"Văn hóa - xã hội"}small/>
                 <CategoryPostList keywords={"Thời trang"}small/>
                 <CategoryPostList keywords={"Hàng hiệu"}small/>
                 <CategoryPostList keywords={"Du lịch"}small/>
                 <CategoryPostList keywords={"Ẩm thực"}small/>
-                <CategoryPostList keywords={"Sống khỏe"}small/>
+                <CategoryPostList keywords={"Sống khỏe"}small/> */}
 
             </div>
         </div>

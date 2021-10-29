@@ -5,17 +5,17 @@ import Footer from '../partials/Footer';
 import BodySection from '../partials/BodySection';
 import AdsSlider from '../partials/AdsSlider';
 
-const url ="https://movies-app-256.netlify.app/"
+
 
 function Home() {
   return (
      <div className="mx-2 md:mx-10 mb-10 md:mb-0" id="top">
 
-    {/* flex flex-col min-h-screen */}
+
       {/*  Site header */}
       <div className="mb-2 ">
-         {/* <img className="h-24 w-1/1 md:w-screen md:h-40" src={adImg} alt="ad" /> */}
-         <AdsSlider url={url}/>
+
+         <AdsSlider location="menu"/>
       </div>
 
       <Header />
