@@ -5,7 +5,7 @@ import marked from 'marked';
 import Header from '../partials/Header';
 import Footer from '../partials/Footer';
 import adImg from '../images/news-01.jpg'
-
+import '../css/PostDetail.css'
 
 
 
@@ -77,7 +77,7 @@ const PostDetail =()=>{
 
 
     return(    
-        <div className="mx-2 md:mx-10 mb-10 md:mb-0" id="top">
+        <div className="mx-10 lg:mx-20 mb-10 md:mb-0" id="top">
         <div className="mb-2 ">
            <img className="h-24 w-1/1 md:w-screen md:h-40" src={adImg} alt="ad" />
         </div>
@@ -98,7 +98,7 @@ const PostDetail =()=>{
                             {data.article.description}
 
                             </p>
-                            <div dangerouslySetInnerHTML={markedParser(data.article.content)} />
+                            <div dangerouslySetInnerHTML={markedParser(data.article.content)} className="markedHTML"/>
                             </article>
           <a className="fixed bottom-10 right-10" href="#top" title="Image from freeiconspng.com"><img src="https://www.freeiconspng.com/uploads/arrow-icon-clip-art-file-down-arrow-icon-png-balin-icon-arrow-right--32.png" width="50" alt="top" /></a>
         </main>
