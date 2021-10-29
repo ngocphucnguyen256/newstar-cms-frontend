@@ -31,6 +31,7 @@
     "react-moment": "^1.1.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
+    "react-slideshow-image": "^3.6.0",
     "react-text-truncate": "^0.17.0",
     "react-transition-group": "^4.4.1",
     "tailwind-scroll-behavior": "^1.0.0",

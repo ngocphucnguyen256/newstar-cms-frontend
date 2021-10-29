@@ -3,8 +3,9 @@ import React from 'react';
 import Header from '../partials/Header';
 import Footer from '../partials/Footer';
 import BodySection from '../partials/BodySection';
-import adImg from '../images/news-01.jpg'
+import AdsSlider from '../partials/AdsSlider';
 
+const url ="https://movies-app-256.netlify.app/"
 
 function Home() {
   return (
@@ -13,7 +14,8 @@ function Home() {
     {/* flex flex-col min-h-screen */}
       {/*  Site header */}
       <div className="mb-2 ">
-         <img className="h-24 w-1/1 md:w-screen md:h-40" src={adImg} alt="ad" />
+         {/* <img className="h-24 w-1/1 md:w-screen md:h-40" src={adImg} alt="ad" /> */}
+         <AdsSlider url={url}/>
       </div>
 
       <Header />
