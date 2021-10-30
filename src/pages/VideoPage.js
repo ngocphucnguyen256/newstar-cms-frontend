@@ -2,7 +2,7 @@
 
 import Header from '../partials/Header';
 import Footer from '../partials/Footer';
-import adImg from '../images/news-01.jpg'
+import AdsSlider from '../partials/AdsSlider';
 import Video from '../partials/Video';
 
 
@@ -14,8 +14,8 @@ const VideoPage =()=>{
 
     return(
         <div className="mx-2 md:mx-10 mb-10 md:mb-0" id="top">
-          <div className="mb-2 ">
-             <img className="h-24 w-1/1 md:w-screen md:h-40" src={adImg} alt="ad" />
+          <div className="mb-2 mx-4 lg:mx-20">
+           <AdsSlider location="menu"/>
           </div>
           <Header />
           <main className="flex-grow">
