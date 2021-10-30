@@ -52,7 +52,7 @@ const PostList =()=>{
 
             <div className="sm:flex justify-between items-stretch mb-4 bg-gray-100">
                 <Post data={data.articles[0]} pbNone mbNone line={12}/>
-                <div  className="w-1/3 h-auto hidden sm:block bg-white md:ml-4"><Ads  index={0}location="headerpost"/></div>
+                <div  className="w-1/3 h-auto hidden sm:block bg-white md:ml-4"><Ads    index={0}location="headerpost"/></div>
             </div>
             <div className="flex items-stretch justify-between">
             {

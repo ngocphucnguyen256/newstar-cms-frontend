@@ -79,8 +79,8 @@ const sortedList= formatList.sort((a,b) =>b.date.getTime() -  a.date.getTime())
             }
             </div>
       
-            <div className="my-4 ">
-                <Ads  className="h-28 w-1/1 md:w-screen md:h-52 " index={0} location="middlepost"/>
+            <div className="my-4 h-28 w-1/1 md:w-screen md:h-52 ">
+                <Ads index={0} location="middlepost"/>
             </div>
         </div>
     )

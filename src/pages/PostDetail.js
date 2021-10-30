@@ -82,9 +82,9 @@ const PostDetail =()=>{
            <AdsSlider location="menu"/>
         </div>
         <Header />
-        <div className="flex justify-between  my-10">
-             <Ads   index={0}location="leftpost"/>                            
-            <main className="w-5/6 mx-4">
+        <div className="relative  my-10">
+             <Ads className="sticky left-0 top-0 w-1/6 h-1/1"  index={0}location="leftpost"/>                            
+            <main className="w-4/6/6 mx-4">
                                 <article  className={`overflow-hidden mr-2  border-b-2`}>
 
                                 <h3 className=" mb-2 md:mb-10 text-sm md:text-2xl text-bold mt-10">
@@ -104,7 +104,7 @@ const PostDetail =()=>{
                                 </article>
             <a className="fixed bottom-10 right-10" href="#top" title="Image from freeiconspng.com"><img src="https://www.freeiconspng.com/uploads/arrow-icon-clip-art-file-down-arrow-icon-png-balin-icon-arrow-right--32.png" width="50" alt="top" /></a>
             </main>
-            <Ads   index={0}location="rightpost"/>                            
+            <Ads className="sticky left-0 top-0 w-1/6 h-1/1"    index={0}location="rightpost"/>                            
         </div>
 
         <div  className="mx-10 lg:mx-20"><Ads index={0}location="bottompost"/>  </div>                          
