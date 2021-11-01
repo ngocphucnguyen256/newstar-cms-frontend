@@ -137,8 +137,8 @@ function Header() {
                           <img alt="star"  src={require('../logo/star_logo.png').default} className="md:w-28" width="70" height="auto"/>
                         </Link>
                       </div>
-                      <div className="hidden md:block text-sm">
-                      <Moment date={today} format="dddd, MMMM Do YYYY" locale="vi" />
+                      <div className="hidden md:block text-sm capitalize">
+                      <Moment date={today} format="dddd, Do MMMM YYYY" locale="vi" />
                       </div>
             </div>
             <div className="flex-shrink-0 md:hidden">

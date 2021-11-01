@@ -12,12 +12,7 @@ import { focusHandling } from 'cruip-js-toolkit';
 
 import Home from './pages/Home';
 import Newest from './partials/Newest';
-import Features from './pages/Features';
-import Pricing from './pages/Pricing';
 import VideoPage from './pages/VideoPage'
-import About from './pages/About';
-import Contact from './pages/Contact';
-import Help from './pages/Help';
 import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
 import ResetPassword from './pages/ResetPassword';
@@ -49,12 +44,6 @@ function App() {
       <Switch>
         <Route exact path="/">
           <Home />
-        </Route>
-        <Route path="/features">
-          <Features />
-        </Route>
-        <Route path="/pricing">
-          <Pricing />
         </Route>
         <Route path="/newest">
           <Newest />
@@ -91,15 +80,6 @@ function App() {
         </Route>
         <Route path="/video">
           <VideoPage />
-        </Route>
-        <Route path="/about">
-          <About />
-        </Route>
-        <Route path="/contact">
-          <Contact />
-        </Route>
-        <Route path="/help">
-          <Help />
         </Route>
         <Route path="/signin">
           <SignIn />
