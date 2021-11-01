@@ -110,72 +110,17 @@ function Header() {
                                     <Link to="/du-lich" className="flex text-gray-300 hover:text-gray-200 py-2">Du lịch</Link>
 
                               </li>
-   
-                          {/* <li className="py-3">
-                          <Collapsible className="text-white" trigger="Du lịch">
-                              <ul>
-                                  <li>
-                                    <Link to="/du-lich" className="flex text-gray-300 hover:text-gray-200 py-2">Du lịch</Link>
 
-                                  </li>
-                                  <li>
-                                  <Link to="/du-lich" className="flex text-gray-300 hover:text-gray-200 py-2">Du lịch</Link>
-
-                                  </li>
-                              </ul>
-                          </Collapsible>
-                          </li> */}
                           <li>
                             <Link to="/am-thuc" className="flex text-gray-300 hover:text-gray-200 py-2">Ẩm thực</Link>
 
                           </li>
-                          {/* <li className="py-3">
-                          <Collapsible className="text-white" trigger="Ẩm thực">
-                              <ul>
-                                  <li>
-                                    <Link to="/am-thuc" className="flex text-gray-300 hover:text-gray-200 py-2">Ẩm thực</Link>
 
-                                  </li>
-                                  <li>
-                                  <Link to="/am-thuc" className="flex text-gray-300 hover:text-gray-200 py-2">Ẩm thực</Link>
-
-                                  </li>
-                              </ul>
-                          </Collapsible>
-                          </li> */}
-                          {/* <li className="py-3">
-                          <Collapsible className="text-white" trigger="Sống khỏe">
-                              <ul>
-                                  <li>
-                                    <Link to="/song-khoe" className="flex text-gray-300 hover:text-gray-200 py-2">Sống khỏe</Link>
-
-                                  </li>
-                                  <li>
-                                  <Link to="/song-khoe" className="flex text-gray-300 hover:text-gray-200 py-2">Sống khỏe</Link>
-
-
-                                  </li>
-                              </ul>
-                          </Collapsible>
-                          </li> */}
                                    <li>
                                     <Link to="/song-khoe" className="flex text-gray-300 hover:text-gray-200 py-2">Sống khỏe</Link>
 
                                   </li>
-                          {/* <li className="py-3">
-                          <Collapsible className="text-white" trigger="Video">
-                              <ul>
-                                  <li>
-                                    <Link to="/video" className="flex text-gray-300 hover:text-gray-200 py-2">Video</Link>
-
-                                  </li>
-                                  <li>
-                                    <Link to="/video" className="flex text-gray-300 hover:text-gray-200 py-2">Video</Link>
-
-                                  </li>
-                              </ul>
-                          </Collapsible>
-                          </li> */}
+     
                                        <li>
                                     <Link to="/video" className="flex text-gray-300 hover:text-gray-200 py-2">Video</Link>
 
@@ -183,10 +128,10 @@ function Header() {
                         </ul>
                       </nav>
 
-                </div>
+                  </div>
 
                             {/* Site branding */}
-                      <div className="flex-shrink-0 mr-4">
+                      <div className="flex-shrink-0 mr-4 hidden md:block">
                         {/* Logo */}
                         <Link to="/" className="block" aria-label="star">
                           <img alt="star"  src={require('../logo/star_logo.png').default} className="md:w-28" width="70" height="auto"/>
@@ -196,6 +141,12 @@ function Header() {
                       <Moment date={today} format="dddd, MMMM Do YYYY" locale="vi" />
                       </div>
             </div>
+            <div className="flex-shrink-0 md:hidden">
+                        {/* Logo */}
+                        <Link to="/" className="block" aria-label="star">
+                          <img alt="star"  src={require('../logo/star_logo.png').default} className="md:w-28" width="70" height="auto"/>
+                        </Link>
+              </div>
             <div className="flex justify-center items-center md:ml-auto">
                     <div className="relative hidden lg:block mr-4">
                     <input type="text" className="rounded-2xl bg-transparent "/>
