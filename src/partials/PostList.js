@@ -50,18 +50,23 @@ const PostList =()=>{
     return(
         <div className="mt-4 md:mt-10">
 
-            <div className="sm:flex justify-between items-stretch mb-4 bg-gray-100">
-                <Post data={data.articles[0]} pbNone mbNone line={12}/>
-                <div  className="w-1/3 h-auto hidden sm:block bg-white md:ml-4"><Ads    index={0}location="headerpost"/></div>
-            </div>
-            <div className="flex items-stretch justify-between">
-            {
-                data.articles.slice(1,3).map(post =>(
-                    <div  key={post.id} className="w-1/3 "><Post key={post.id} data={post}  line={10}/></div>
-                ))
-            }
-               <div className="w-1/3 h-auto border-l-2 pl-2"> <Ads  index={1} location="headerpost"/></div>
-            </div>
+        <div className="flex justify-between items-stretch mb-4 bg-gray-100">
+               <div className="w-3/4">
+                    <Post data={data.articles[0]} pbNone mbNone line={12}/>
+                    <div className="flex items-stretch mt-4">
+                    {
+                        data.articles.slice(1,3).map(post =>(
+                            <div  key={post.id} className="w-1/2"><Post key={post.id} data={post}  line={10}/></div>
+                        ))
+                    }
+                   </div>
+            
+                </div>
+                <div  className="w-1/4 h-auto  bg-white md:ml-4">
+                    <Ads    index={0}location="headerpost"/>
+                </div>
+        </div>
+  
         </div>
     )
 }
