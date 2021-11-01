@@ -1,4 +1,5 @@
 import Post from './Post'
+import BlockPost from './BlockPost'
 import { useQuery, gql } from '@apollo/client'
 import Ads from './Ads'
 
@@ -50,13 +51,13 @@ const PostList =()=>{
     return(
         <div className="mt-4 md:mt-10">
 
-        <div className="flex justify-between items-stretch mb-4 bg-gray-100">
+        <div className="flex justify-between items-stretch mb-4 ">
                <div className="w-3/4">
                     <Post data={data.articles[0]} pbNone mbNone line={12}/>
                     <div className="flex items-stretch mt-4">
                     {
                         data.articles.slice(1,3).map(post =>(
-                            <div  key={post.id} className="w-1/2"><Post key={post.id} data={post}  line={10}/></div>
+                            <div  key={post.id} className="w-1/2"><BlockPost key={post.id} data={post}  line={10}/></div>
                         ))
                     }
                    </div>
