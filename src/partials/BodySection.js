@@ -1,8 +1,7 @@
 import PostList from '../partials/PostList';
 import MiddlePostList from '../partials/MiddlePostList';
 import Video from '../partials/Video';
-import OldPostList from '../partials/OldPostList';
-import Ads from './Ads'
+import AdsSlider from './AdsSlider';
 
 const BodySection =()=>{
 
@@ -14,9 +13,9 @@ return(
 
         <Video/>
 
-        <OldPostList/>
-        <div className="mb-2 ">
-            <Ads className="h-24 w-1/1 md:w-screen md:h-40" index={0}location="footer"/>
+
+        <div className="my-4 ">
+            <AdsSlider className="" index={0}location="footer"/>
         </div>
     </div>
 )
