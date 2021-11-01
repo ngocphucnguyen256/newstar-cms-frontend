@@ -22,14 +22,10 @@ const videos =[
 
 const Video =()=>{
     const [nowPlaying, setNowPlaying] = useState(videos[0])
-    const [slide, setSlide] = useState(0)
 
 
-    const handleMenuClick=(e)=>{
-        if(slide!==e.value){
-            setSlide(e.value)
-        }
-    }
+
+
 
     const handleClick=(e)=>{
         setNowPlaying({
@@ -40,33 +36,24 @@ const Video =()=>{
 
     return(
         <div className="mt-4 bg-yellow-100 p-3  rounded-lg" id="video">
-            <ul className="hidden md:flex items-baseline py-4 flex-wrap">
-                <h3 className="text-bold text-2xl mr-4">Video</h3>
-                <li className="mr-2 lg:mr-4 hover:text-purple-600  cursor-pointer text-bold" onClick={(e)=>handleMenuClick(e.target)} value={1}>Thời sự</li>
-                <li  className="mr-2 lg:mr-4 hover:text-purple-600 cursor-pointer text-bold" onClick={(e)=>handleMenuClick(e.target)} value={2}>Nhịp sống</li>
-                <li  className="mr-2 lg:mr-4 hover:text-purple-600 cursor-pointer text-bold" onClick={(e)=>handleMenuClick(e.target)}>Food</li>
-                <li  className="mr-2 lg:mr-4 hover:text-purple-600 cursor-pointer text-bold" onClick={(e)=>handleMenuClick(e.target)}>Cuộc sống 4.0</li>
-                <li  className="mr-2 lg:mr-4 hover:text-purple-600 cursor-pointer text-bold" onClick={(e)=>handleMenuClick(e.target)}>Tôi kể</li>
-                <li className="mr-2 lg:mr-4 hover:text-purple-600 cursor-pointer text-bold" onClick={(e)=>handleMenuClick(e.target)}>Chuyện núi rừng</li>
-                <li className="mr-2 lg:mr-4 hover:text-purple-600 cursor-pointer text-bold" onClick={(e)=>handleMenuClick(e.target)}>Nguy cơ</li>
+                <h3 className="text-bold text-2xl lg:text-3xl  my-4">Video</h3>
 
-            </ul>
                    {/* slider*/}
 
             <div className="overflow-hidden md:pb-5">
-                <div className={`flex  transition duration-200 ease-in-out transform ${slide===1? "translate-x-0" : ""}  ${slide===2? "-translate-x-full" : ""}`}>
+                <div className={`flex  transition duration-200 ease-in-out transform`}>
                     <div className="flex justify-between mb-10 flex-grow flex-shrink-0 w-1/1  ">
                         <div className="w-1/1">
                             <iframe className="md:h-96 md:w-1/1 xl:w-11/12" width="100%" height="300px" src={`https://www.youtube.com/embed/${nowPlaying.id}`} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-                            <p className="my-2 font-bold">{nowPlaying.title}</p>
+                            <p className="my-4 font-bold">{nowPlaying.title}</p>
                         </div>
                         
-                   {/* nav col  2*/}
+                   {/* nav col  1*/}
                         <div className="xl:flex flex-col justify-between items-center w-1/3 mr-6 hidden">
                                 {
                                     videos.map((video, index) =>{
                                         return(
-                                            <div key={index} className="w-1/1 p-2 flex justify-between items-center" onClick={(e)=>handleClick(e.target)} id={video.id} title={video.title}>
+                                            <div key={index} className="w-1/1 p-2 flex justify-between items-center transform hover:scale-105 transition duration-700 ease-out " onClick={(e)=>handleClick(e.target)} id={video.id} title={video.title}>
                                                     <img className="mr-4 rounded-md" src={`https://img.youtube.com/vi/${video.id}/default.jpg`} alt="YouTube"  id={video.id} title={video.title}/>
                                                     <p className="text-xs md:text-sm"  id={video.id} title={video.title}>{video.title}</p>
                                             </div>
@@ -76,30 +63,6 @@ const Video =()=>{
         
                         </div>
                     </div>
-                    <div className="flex justify-between mb-10  flex-grow flex-shrink-0 w-1/1 ">
-                    <div className="w-1/1">
-                        <iframe className="md:h-96 md:w-1/1  xl:w-11/12" width="100%" height="300px" src={`https://www.youtube.com/embed/${nowPlaying.id}`} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-                        <p className="my-2 font-bold">{nowPlaying.title}</p>
-                    </div>
-
-
-                   {/* nav col  2*/}
-
-                    <div className=" flex-col justify-between items-center w-1/3 mr-6 hidden xl:flex">
-                            {
-                                videos.map((video, index) =>{
-                                    return(
-                                        <div key={index} className="w-1/1 p-2 flex justify-between items-center" onClick={(e)=>handleClick(e.target)} id={video.id} title={video.title}>
-                                                <img className="mr-4 rounded-md" src={`https://img.youtube.com/vi/${video.id}/default.jpg`} alt="YouTube"  id={video.id} title={video.title}/>
-                                                <p className="text-xs md:text-sm"  id={video.id} title={video.title}>{video.title}</p>
-                                        </div>
-                                    )
-                                })
-                            }
-    
-                    </div>
-                    </div>
-          
                 </div>
             </div>
 
