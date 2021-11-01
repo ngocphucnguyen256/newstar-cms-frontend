@@ -3,7 +3,7 @@ import {Link } from 'react-router-dom'
 
 
 
-const OldPost =(props)=>{
+const BlockPost =(props)=>{
 
   const [noImg, setNoImg] = useState(false)
   const [imgUrl, setImgUrl] = useState("")
@@ -31,8 +31,10 @@ const OldPost =(props)=>{
   }, [data, props])
 
     return(
-        <article  className={`bg-white rounded-md p-2 md:p-4 overflow-hidden mr-2 max-w-sm md:max-w-none ${mbNone? "" :"mb-4"} ${pbNone? "" :"pb-4"}  ${props.small? "max-h-52 sm:max-h-72 md:max-h-screen" : "max-h-80 sm:max-h-96  md:max-h-screen"} ${props.borderBottom ? "border-b-2" : "" }`}>
-
+        <article  className={`bg-white rounded-md  overflow-hidden mr-2 max-w-sm md:max-w-none ${mbNone? "" :"mb-4"} ${pbNone? "" :"pb-4"}  ${props.small? "max-h-52 sm:max-h-72 md:max-h-screen" : "max-h-80 sm:max-h-96  md:max-h-screen"} ${props.borderBottom ? "border-b-2" : "" }`}>
+                  <h3 className="mb-2 md:mb-4 text-sm sm:text-lg lg:text-xl text-bold">
+                      <Link  to={`/post/${data.slug}/${data.id}`} className=" text-black hover:text-purple-600 transition duration-150 ease-in-out overflow-ellipsis">{data.title}</Link>
+                  </h3>
                   {
                       !noImg?(
                         <figure className="mb-2 md:mb-4">
@@ -48,9 +50,7 @@ const OldPost =(props)=>{
 
       
 
-                  <h3 className="mb-2 md:mb-4 text-sm sm:text-lg lg:text-xl text-bold">
-                      <Link  to={`/post/${data.slug}/${data.id}`} className=" text-black hover:text-purple-600 transition duration-150 ease-in-out overflow-ellipsis">{data.title}</Link>
-                  </h3>
+                  
                     <p className="text-xs sm:text-sm lg:text-base text-gray-40">
                           { data.description }
                     </p>
@@ -65,4 +65,4 @@ const OldPost =(props)=>{
 }
 
 
-export default OldPost
+export default BlockPost

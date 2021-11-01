@@ -1,4 +1,4 @@
-import Post from './Post'
+import BlockPost from './BlockPost'
 import { useQuery, gql } from '@apollo/client'
 import CategoryPostList from './CategoryPostList'
 
@@ -61,13 +61,13 @@ const sortedList= formatList.sort((a,b) =>b.date.getTime() -  a.date.getTime())
             <h3 className="mb-2 border-b-2 border-red-400 text-bold md:text-2xl lg:text-3xl ">Mới nhất</h3>   
             {
                 sortedList.map(post =>(
-                    <Post key={post.id} data={post} small borderBottom headingTop line={10}/>
+                    <BlockPost key={post.id} data={post} small borderBottom headingTop line={10}/>
                 ))
                 
             }
             {
                 sortedList.map(post =>(
-                    <Post key={post.id} data={post} small borderBottom headingTop line={10}/>
+                    <BlockPost key={post.id} data={post} small borderBottom headingTop line={10}/>
                 ))
             }
             </div>

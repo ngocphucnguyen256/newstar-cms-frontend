@@ -1,4 +1,4 @@
-import Post from './Post'
+import BlockPost from './BlockPost'
 import { useQuery, gql } from '@apollo/client'
 import AdsSlider from './AdsSlider'
 
@@ -67,14 +67,14 @@ const sortedList= formatList.sort((a,b) =>b.date.getTime() -  a.date.getTime())
 
 
     return(
-        <div className="mb-10">
+        <div className="mb-4 lg:mb-10">
 
 
-                <h3 className="mb-2 border-b-2 border-red-400 text-bold md:text-2xl lg:text-3xl">{props.keywords}</h3>
-            <div className={`${props.grid? "md:grid grid-cols-2":""}`}>
+            <h3 className="mb-2 border-b-2 border-red-400 text-bold md:text-2xl lg:text-3xl">{props.keywords}</h3>
+            <div className={`grid grid-cols-2`}>
             {
                 sortedList.map(post =>(
-                    <Post key={post.id} data={post} small={props.small} borderBottom line={4}/>
+                    <BlockPost key={post.id} data={post} small={props.small} borderBottom line={5}/>
                 ))
             }
             </div>
