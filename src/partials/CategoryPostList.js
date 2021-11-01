@@ -1,6 +1,6 @@
 import Post from './Post'
 import { useQuery, gql } from '@apollo/client'
-import Ads from './Ads'
+import AdsSlider from './AdsSlider'
 
 
 
@@ -67,7 +67,7 @@ const sortedList= formatList.sort((a,b) =>b.date.getTime() -  a.date.getTime())
 
 
     return(
-        <div className="mt-10">
+        <div className="mb-10">
 
 
                 <h3 className="mb-2 border-b-2 border-red-400 text-bold md:text-2xl lg:text-3xl">{props.keywords}</h3>
@@ -80,7 +80,7 @@ const sortedList= formatList.sort((a,b) =>b.date.getTime() -  a.date.getTime())
             </div>
       
             <div className="my-4 h-28 w-1/1 md:h-52 ">
-                <Ads index={0} location="middlepost"/>
+                <AdsSlider index={0} location="middlepost"/>
             </div>
         </div>
     )
