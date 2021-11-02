@@ -39,7 +39,7 @@ const BlockPost =(props)=>{
                       !noImg?(
                         <figure className="mb-2 md:mb-4">
                           <Link  to={`/post/${data.slug}/${data.id}`} >
-                            <img className={` rounded-md transform hover:scale-105 transition duration-700 ease-out ${props.small?"w-20 md:w-auto" :"   md:w-auto"}`}src={imgUrl}  alt={data.id}/>
+                            <img className={` rounded-md transform hover:scale-105 transition duration-700 ease-out ${props.small?"w-20 max-h-14 md:max-h-60 md:w-auto" :"   md:w-auto"}`}src={imgUrl}  alt={data.id}/>
                         </Link> 
                       </figure>
                     ):(
