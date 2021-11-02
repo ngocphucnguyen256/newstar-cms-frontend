@@ -65,11 +65,7 @@ const sortedList= formatList.sort((a,b) =>b.date.getTime() -  a.date.getTime())
                 ))
                 
             }
-            {
-                sortedList.map(post =>(
-                    <BlockPost key={post.id} data={post} small borderBottom headingTop line={10}/>
-                ))
-            }
+    
             </div>
             <div className="w-2/3 pl-2 md:pl-4">
                 <CategoryPostList keywords={"Kinh tế"} small/>
