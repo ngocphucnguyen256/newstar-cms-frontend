@@ -4,6 +4,7 @@ import Header from '../partials/Header';
 import Footer from '../partials/Footer';
 import AdsSlider from '../partials/AdsSlider';
 import Video from '../partials/Video';
+import TiktokVideo from '../partials/TiktokVideo';
 
 
 
@@ -21,6 +22,7 @@ const VideoPage =()=>{
           <main className="flex-grow">
             <Video/>
             <a className="fixed bottom-10 right-10" href="#top" title="Image from freeiconspng.com"><img src="https://www.freeiconspng.com/uploads/arrow-icon-clip-art-file-down-arrow-icon-png-balin-icon-arrow-right--32.png" width="50" alt="top" /></a>
+            <TiktokVideo/>
           </main>
 
           <Footer />
