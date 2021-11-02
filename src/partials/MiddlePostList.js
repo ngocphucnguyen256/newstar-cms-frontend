@@ -50,7 +50,8 @@ const MiddlePostList =()=>{
     })
 
 const sortedList= formatList.sort((a,b) =>b.date.getTime() -  a.date.getTime())
-
+const newPost = sortedList.slice(0,10)
+const ortherPost = sortedList.slice(10)
 
 
 
@@ -60,7 +61,7 @@ const sortedList= formatList.sort((a,b) =>b.date.getTime() -  a.date.getTime())
             <div className="mb-10  justify-between items-center border-r-2 pr-2 md:pr-4 w-1/3">
             <h3 className="mb-2 border-b-2 border-red-400 text-bold md:text-2xl lg:text-3xl ">Mới nhất</h3>   
             {
-                sortedList.map(post =>(
+                newPost.map(post =>(
                     <BlockPost key={post.id} data={post} small borderBottom headingTop line={10}/>
                 ))
                 
@@ -68,16 +69,16 @@ const sortedList= formatList.sort((a,b) =>b.date.getTime() -  a.date.getTime())
     
             </div>
             <div className="w-2/3 pl-2 md:pl-4">
-                <CategoryPostList keywords={"Kinh tế"} small/>
-                <CategoryPostList keywords={"Giải trí"} small/>
-                <CategoryPostList keywords={"Công nghệ"}small/>
-                <CategoryPostList keywords={"Thể thao"}small/>
-                <CategoryPostList keywords={"Văn hóa - xã hội"}small/>
-                <CategoryPostList keywords={"Thời trang"}small/>
-                <CategoryPostList keywords={"Hàng hiệu"}small/>
-                <CategoryPostList keywords={"Du lịch"}small/>
-                <CategoryPostList keywords={"Ẩm thực"}small/>
-                <CategoryPostList keywords={"Sống khỏe"}small/>
+                <CategoryPostList keywords={"Kinh tế"} data={ortherPost}  small/>
+                <CategoryPostList keywords={"Giải trí"} data={ortherPost}  small/>
+                <CategoryPostList keywords={"Công nghệ"} data={ortherPost} small/>
+                <CategoryPostList keywords={"Thể thao"} data={ortherPost} small/>
+                <CategoryPostList keywords={"Văn hóa - xã hội"} data={ortherPost} small/>
+                <CategoryPostList keywords={"Thời trang"} data={ortherPost} small/>
+                <CategoryPostList keywords={"Hàng hiệu"} data={ortherPost} small/>
+                <CategoryPostList keywords={"Du lịch"} data={ortherPost} small/>
+                <CategoryPostList keywords={"Ẩm thực"} data={ortherPost} small/>
+                <CategoryPostList keywords={"Sống khỏe"} data={ortherPost} small/>
 
             </div>
         </div>

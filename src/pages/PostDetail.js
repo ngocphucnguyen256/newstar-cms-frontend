@@ -92,7 +92,7 @@ const PostDetail =()=>{
                                 </h3>
                     
                                 {!noImg ? (
-                                    <img className={` rounded-md transform hover:scale-105 transition duration-700 ease-out h-1/1 mb-10 md:w-2/3`} src={imgUrl} alt={data.article.id} />
+                                    <img className={` rounded-md transform hover:scale-105 transition duration-700 ease-out h-1/1 mb-10 md:w-2/3 max-h-screen`} src={imgUrl} alt={data.article.id} />
                                 ) : (
                                 <></>
                                 )}
