@@ -1,18 +1,75 @@
 import BlockPost from './BlockPost'
+import { useQuery, gql } from '@apollo/client'
 import AdsSlider from './AdsSlider'
 
 
+const POSTS =gql`
+query GetPosts{
+    categories{
+   name,
+   articles{
+       id,
+     title,
+     description,
+     slug,
+     created_at,
+     image{
+         url
+     }
+   }
+ }
+}
+`
 
 
 
 const CategoryPostList =(props)=>{
 
+    const {loading, error, data} =useQuery(POSTS)
+    let temp
+    let filterList 
 
-    const temp=[...props.data]
+
+
+    if(props.data){
+        temp=[...props.data]
+        filterList= temp.filter(post => post.categories.some(category => category.name=== props.keywords));
+    }
+    else{
+       
+        if(loading) {
+            return (
+                <div className="mt-96"></div>
+    
+            )
+        }
+        if(error) {
+            return (
+                <div className="mt-96"></div>
+            )
+        }
+        temp=[...data.categories]
+        filterList = temp.filter(category=>(
+            category.name=== props.keywords
+        )).filter(category=>(
+            category.articles !=null
+        ))
+        const formatList =  filterList[0].articles.map(post=>{
+
+            let localdate = new Date(post.created_at);
+        
+    
+            const copy ={date: localdate, ...post}
+    
+            return copy
+        })
+    
+        filterList= formatList.sort((a,b) =>b.date.getTime() -  a.date.getTime())
+    }
+   
 
 
     
-    let filterList = temp.filter(post => post.categories.some(category => category.name=== props.keywords));
 
 
 
