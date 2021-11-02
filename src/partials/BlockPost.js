@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react'
 import {Link } from 'react-router-dom'
-
+import Truncate from 'react-truncate';
 
 
 const BlockPost =(props)=>{
@@ -52,7 +52,15 @@ const BlockPost =(props)=>{
 
                   
                     <p className="text-xs sm:text-sm lg:text-base text-gray-40">
-                          { data.description }
+                     
+                    <Truncate
+                    lines={props.line}
+                    ellipsis={(
+                      <span>...<Link  to={`/post/${data.slug}/${data.id}`} 
+                      className=" text-black hover:text-purple-600 transition duration-150 ease-in-out overflow-ellipsis text-bold"> xem thêm</Link></span>
+                    )}>
+                    { data.description }
+                   </Truncate>
                     </p>
 
        

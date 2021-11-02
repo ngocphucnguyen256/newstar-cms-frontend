@@ -17,7 +17,8 @@ query GetPosts{
         image{
             url
         },
-        created_at
+        created_at,
+        slug
     }
 }
 `
@@ -62,7 +63,7 @@ const ortherPost = sortedList.slice(10)
             <h3 className="mb-2 border-b-2 border-red-400 text-bold md:text-2xl lg:text-3xl ">Mới nhất</h3>   
             {
                 newPost.map(post =>(
-                    <BlockPost key={post.id} data={post} small borderBottom headingTop line={10}/>
+                    <BlockPost key={post.id} data={post} small borderBottom headingTop line={5}/>
                 ))
                 
             }
