@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 function Footer() {
   return (
-    <footer className= "flex mt-10 md:text-base lg:mx-52  border-t-2 pt-2">
+    <footer className= "flex mt-10 md:text-base border-t-2 pt-2">
       <div className="w-2/3 pr-2 md:pr-4 border-r-2">
         {/* Site branding */}
         <div className="pb-7">
