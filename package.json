@@ -6,7 +6,7 @@
   "dependencies": {
     "@apollo/client": "^3.4.16",
     "@apollo/react-hooks": "^4.0.0",
-    "@craco/craco": "^6.1.1",
+    "@craco/craco": "^6.4.0",
     "@tailwindcss/custom-forms": "^0.2.1",
     "@tailwindcss/forms": "^0.3.2",
     "@testing-library/jest-dom": "^5.11.10",
@@ -17,6 +17,7 @@
     "apollo-client": "^2.6.10",
     "apollo-link-http": "^1.5.17",
     "autoprefixer": "^9.8.8",
+    "bootstrap": "^5.1.3",
     "cruip-js-toolkit": "^1.0.3",
     "graphql": "^15.6.1",
     "graphql-tag": "^2.12.5",
@@ -27,9 +28,12 @@
     "node-sass": "^6.0.0",
     "postcss": "^7.0.39",
     "react": "^17.0.2",
+    "react-bootstrap": "^2.0.1",
+    "react-bootstrap-accordion": "^1.0.0",
     "react-collapsible": "^2.8.4",
     "react-dom": "^17.0.2",
     "react-moment": "^1.1.1",
+    "react-multi-carousel": "^2.6.5",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "react-slideshow-image": "^3.6.0",
@@ -61,5 +65,16 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "description": "React landing page.",
+  "main": "craco.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ngocphucnguyen256/newstar-cms-frontend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ngocphucnguyen256/newstar-cms-frontend/issues"
   }
 }
