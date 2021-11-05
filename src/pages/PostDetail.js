@@ -84,7 +84,7 @@ const PostDetail =()=>{
     let str= data.article.content
 
 
-    let parsed = parser(str.replaceAll("<oembed url", "<iframe width=100% height=500px src").replaceAll("</oembed>", "</iframe>"))
+    let parsed = parser(str)
 
 
 
