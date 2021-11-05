@@ -64,7 +64,7 @@ const PostList =()=>{
             
                 </div>
                 <div  className="w-1/4 h-auto  bg-white md:ml-4">
-                    <Ads    index={0}location="headerpost"/>
+                    <Ads   index={0}location="headerpost"/>
                 </div>
         </div>
   
