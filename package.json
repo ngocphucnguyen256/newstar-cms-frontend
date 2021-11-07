@@ -7,8 +7,11 @@
     "@apollo/client": "^3.4.16",
     "@apollo/react-hooks": "^4.0.0",
 <<<<<<< HEAD
+<<<<<<< HEAD
     "@craco/craco": "^6.4.0",
 =======
+=======
+>>>>>>> cd4c071c552e3b8bbda3bffb84ee5cd25f698bb9
     "@ckeditor/ckeditor5-build-classic": "^31.0.0",
     "@ckeditor/ckeditor5-react": "^3.0.3",
     "@craco/craco": "^6.1.1",
