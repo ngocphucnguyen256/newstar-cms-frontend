@@ -10735,6 +10735,7 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 "react-multi-carousel@^2.6.5":
   "integrity" "sha512-i5iuAm5XRT/h7uBL9/pGWeRsQXzqvjBrPVP1sobKgDKEvfZuKFpYp/alaQhTRM56Jtkb8jZpSqLn52Ku6jJbDg=="
   "resolved" "https://registry.npmjs.org/react-multi-carousel/-/react-multi-carousel-2.6.5.tgz"
@@ -10742,6 +10743,8 @@
 
 "react-refresh@^0.8.3", "react-refresh@>=0.8.3 <0.10.0":
 =======
+=======
+>>>>>>> cd4c071c552e3b8bbda3bffb84ee5cd25f698bb9
 =======
 >>>>>>> cd4c071c552e3b8bbda3bffb84ee5cd25f698bb9
 "react-property@2.0.0":
