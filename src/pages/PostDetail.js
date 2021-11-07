@@ -1,11 +1,11 @@
 import { useParams } from 'react-router-dom'
 import {useQuery, gql} from '@apollo/client'
-import marked from 'marked';
 import AdsSlider from '../partials/AdsSlider';
 import Ads from '../partials/Ads'
 import Header from '../partials/Header';
 import Footer from '../partials/Footer';
 import '../css/PostDetail.css'
+import parser from 'html-react-parser';
 
 
 
@@ -30,10 +30,17 @@ query GetPost($id: ID!){
     }
 }
 `
-const markedParser =(content)=>{
-    var rawMarkup = marked(content, {sanitize: true});
-    return { __html: rawMarkup };
-}
+
+// function getId(url) {
+//     const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
+//     const match = url.match(regExp);
+
+//     return (match && match[2].length === 11)
+//       ? match[2]
+//       : null;
+// }
+    
+
 
 
 const PostDetail =()=>{
@@ -61,7 +68,6 @@ const PostDetail =()=>{
         )
     }
 
-    console.log(data);
 
 
 
@@ -71,8 +77,14 @@ const PostDetail =()=>{
     else{
       imgUrl=data.article.image.url
     }
-    
 
+
+ 
+
+    let str= data.article.content
+
+
+    let parsed = parser(str)
 
 
 
@@ -86,7 +98,6 @@ const PostDetail =()=>{
             <div className="hidden md:block sticky left-0 top-20 w-1/6 h-auto "> <Ads   index={0}location="leftpost"/>       </div>                     
             <main className="md:w-4/6 mx-4">
                                 <article  className={`overflow-hidden mr-2  border-b-2`}>
-
                                 <h3 className=" mb-2 md:mb-10 text-sm md:text-2xl text-bold mt-10">
                                 {data.article.title}
                                 </h3>
@@ -100,8 +111,10 @@ const PostDetail =()=>{
                                 {data.article.description}
 
                                 </p>
-                                <Ads index={0}location="leftpost"/>
-                                <div dangerouslySetInnerHTML={markedParser(data.article.content)} className="markedHTML mt-4"/>
+                                <div className="my-4 lg:my-8"><Ads index={0}location="leftpost"/></div>
+                                {
+                                    parsed
+                                }        
                                 </article>
             <a className="fixed bottom-10 right-10" href="#top" title="Image from freeiconspng.com"><img src="https://www.freeiconspng.com/uploads/arrow-icon-clip-art-file-down-arrow-icon-png-balin-icon-arrow-right--32.png" width="50" alt="top" /></a>
             </main>

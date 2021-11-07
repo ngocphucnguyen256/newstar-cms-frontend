@@ -6,7 +6,13 @@
   "dependencies": {
     "@apollo/client": "^3.4.16",
     "@apollo/react-hooks": "^4.0.0",
+<<<<<<< HEAD
     "@craco/craco": "^6.4.0",
+=======
+    "@ckeditor/ckeditor5-build-classic": "^31.0.0",
+    "@ckeditor/ckeditor5-react": "^3.0.3",
+    "@craco/craco": "^6.1.1",
+>>>>>>> cd4c071c552e3b8bbda3bffb84ee5cd25f698bb9
     "@tailwindcss/custom-forms": "^0.2.1",
     "@tailwindcss/forms": "^0.3.2",
     "@testing-library/jest-dom": "^5.11.10",
@@ -21,6 +27,7 @@
     "cruip-js-toolkit": "^1.0.3",
     "graphql": "^15.6.1",
     "graphql-tag": "^2.12.5",
+    "html-react-parser": "^1.4.0",
     "isomorphic-unfetch": "^3.1.0",
     "marked": "^3.0.8",
     "moment": "^2.29.1",

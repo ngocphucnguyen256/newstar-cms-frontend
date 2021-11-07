@@ -8,7 +8,10 @@ query GetAds($location: String!){
       location: $location
     }){
           id,
-          url
+          url,
+          banner{
+              url
+          }
     }
 }
 `
@@ -58,8 +61,16 @@ const Ads = (props) => {
 
     return (
         <div className="w-1/1 h-full " >
-               <iframe  className="flex items-center justify-center bg-cover w-1/1 h-1/1 rounded-md" frameBorder="0"  src={data.ads[props.index].url}  title="3rd party ad content" name="" scrolling="no" marginWidth="0"
-                marginHeight="0" data-is-safeframe="true" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation"  ></iframe>
+                     {
+                          data.ads[props.index].banner ? (
+                            <a className="w-1/1 h-1/1 rounded-md object-fill " href={data.ads[props.index].url} target="_blank" rel="noreferrer"> <img  className="object-fill w-1/1 h-1/1" src={data.ads[props.index].banner.url} alt="ads"/></a>
+                          ) : (
+                            <iframe  className="flex items-center justify-center bg-cover w-1/1 h-1/1 rounded-md" frameBorder="0"  src={data.ads[props.index].url}  title="3rd party ad content" name="" scrolling="no" marginWidth="0"
+                            marginHeight="0" data-is-safeframe="true" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation"  ></iframe>
+                          )
+                          
+                        }
+             
         </div>
       
     )
