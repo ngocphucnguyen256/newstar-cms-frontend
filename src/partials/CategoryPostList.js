@@ -4,7 +4,6 @@ import AdsSlider from './AdsSlider'
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 
-
 const POSTS =gql`
 query GetPosts{
     categories{
@@ -24,44 +23,63 @@ query GetPosts{
 `
 
 
+
 const CategoryPostList =(props)=>{
 
     const {loading, error, data} =useQuery(POSTS)
+    let temp
+    let filterList 
 
 
-    if(loading) {
-        return (
-            <div className="mt-96"></div>
 
-        )
+    if(props.data){
+        temp=[...props.data]
+        filterList= temp.filter(post => post.categories.some(category => category.name=== props.keywords));
     }
-    if(error) {
-        return (
-            <div className="mt-96"></div>
-        )
+    else{
+       
+        if(loading) {
+            return (
+                <div className="mt-96"></div>
+    
+            )
+        }
+        if(error) {
+            return (
+                <div className="mt-96"></div>
+            )
+        }
+        temp=[...data.categories]
+        filterList = temp.filter(category=>(
+            category.name=== props.keywords
+        )).filter(category=>(
+            category.articles !=null
+        ))
+        const formatList =  filterList[0].articles.map(post=>{
+
+            let localdate = new Date(post.created_at);
+        
+    
+            const copy ={date: localdate, ...post}
+    
+            return copy
+        })
+    
+        filterList= formatList.sort((a,b) =>b.date.getTime() -  a.date.getTime())
     }
+   
 
 
-    const temp=[...data.categories]
-
-    const filterList = temp.filter(category=>(
-        category.name=== props.keywords
-    )).filter(category=>(
-        category.articles !=null
-    ))
     
 
 
-    const formatList =  filterList[0].articles.map(post=>{
 
-        let localdate = new Date(post.created_at);
 
-        const copy ={date: localdate, ...post}
 
-        return copy
-    })
+    
 
-const sortedList= formatList.sort((a,b) =>b.date.getTime() -  a.date.getTime())
+
+
 
 
 const responsive = {
@@ -109,11 +127,11 @@ const responsive = {
                             itemClass="carousel-item-padding-40-px"
                             >
                                 {
-                                    sortedList.map(post =>(
+                                    filterList.map(post =>(
                                         <BlockPost key={post.id} data={post} small={props.small} borderBottom line={5}/>
                                     ))
                                 }
-                            </Carousel>
+                        </Carousel>
                     </div>
             
                     <div className="my-4 h-28 w-1/1 md:h-52 ">
