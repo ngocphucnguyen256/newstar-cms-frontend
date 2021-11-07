@@ -4,8 +4,28 @@ import Header from '../partials/Header';
 import Footer from '../partials/Footer';
 import BodySection from '../partials/BodySection';
 import AdsSlider from '../partials/AdsSlider';
+import Darkmode from 'darkmode-js';
 
 
+new Darkmode().showWidget();
+const options = {
+  width: '30px',
+  height: '30px',
+  bottom: '-1.5rem', // default: '32px'
+  right: '2.5rem', // default: '32px'
+  left: 'unset', // default: 'unset'
+  time: '0.5s', // default: '0.3s'
+  mixColor: '#fff', // default: '#fff'
+  backgroundColor: '#fff',  // default: '#fff'
+  buttonColorDark: '#100f2c',  // default: '#100f2c'
+  buttonColorLight: '#fff', // default: '#fff'
+  saveInCookies: false, // default: true,
+  label: '🌓', // default: ''
+  autoMatchOsTheme: true // default: true
+}
+
+const darkmode = new Darkmode(options);
+darkmode.showWidget();
 
 function Home() {
   return (
