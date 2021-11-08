@@ -65,7 +65,7 @@ function Header() {
     return () => document.removeEventListener('keydown', keyHandler);
   });
   return (
-    <header className="sticky top-0 md:-top-24 left-0 right-0 w-full z-30 bg-white text-black font-bold ">
+    <header className="sticky top-0 md:-top-24 left-0 right-0 w-full z-30 text-black font-bold ">
       
       <div className="max-w-7xl mx-auto">
   
@@ -170,7 +170,7 @@ function Header() {
                       <Moment date={today} format="dddd, Do MMMM YYYY" locale="vi" />
                       </div>
             </div>
-            <div className="flex-shrink-0 md:hidden">
+            <div className="flex-shrink-0 md:hidden ml-10 md:ml-0">
                         {/* Logo */}
                         <Link to="/" className="block" aria-label="star">
                           <img alt="star"  src={require('../logo/star_logo.png').default} className="md:w-28" width="70" height="auto"/>
@@ -272,7 +272,7 @@ function Header() {
                   </button>
                 </li>
 
-                <nav id="all-nav" ref={allNav} className="font-bold absolute top-full z-20 left-0 right-0 w-full py-6 bg-white transition-all duration-300 ease-in-out text-xs" style={allNavOpen ? { maxHeight: allNav.current.scrollHeight, opacity: 1 } : { maxHeight: 0, opacity: 0 } }>
+                <nav id="all-nav" ref={allNav} className="font-bold absolute top-full z-20 left-0 right-0 w-full py-6 transition-all duration-300 ease-in-out text-xs" style={allNavOpen ? { maxHeight: allNav.current.scrollHeight, opacity: 1 } : { maxHeight: 0, opacity: 0 } }>
                   <div className="flex flex-grow justify-center flex-wrap items-center text-xs text-bold flex flex-wrap">
                     <ul>
                       <Link to="/" className=" text-black hover:text-purple-600 px-2 py-1 flex">Trang chủ</Link>

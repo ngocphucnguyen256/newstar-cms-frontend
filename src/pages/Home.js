@@ -9,10 +9,8 @@ import Darkmode from 'darkmode-js';
 
 new Darkmode().showWidget();
 const options = {
-  width: '30px',
-  height: '30px',
-  bottom: '-1.5rem', // default: '32px'
-  right: '2.5rem', // default: '32px'
+  bottom: '0', // default: '32px'
+  right: '2.9rem', // default: '32px'
   left: 'unset', // default: 'unset'
   time: '0.5s', // default: '0.3s'
   mixColor: '#fff', // default: '#fff'

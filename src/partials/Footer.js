@@ -3,21 +3,26 @@ import { Link } from 'react-router-dom';
 
 function Footer() {
   return (
-    <footer className= "flex mt-10 md:text-base border-t-2 pt-2">
-      <div className="w-2/3 pr-2 md:pr-4 border-r-2">
+    <footer className= "md:flex mt-10 md:text-baseborder-t-2 pt-2">
+      <div className="md:w-2/3 w-1/1 pr-2 md:pr-4  md:border-r-2 md:border-b-0 border-b-2 md:mb-0 mb-2">
         {/* Site branding */}
-        <div className="pb-7">
+        <div className="text-center md:text-left">
               {/* Logo */}
             <Link to="/" className="block" aria-label="star">
               <img alt="star"  src={require('../logo/star_logo.png').default} className="md:w-28" width="70" height="auto"/>
           </Link>
         </div>
         
-        <p className="mb-4 text-xs text-black px-2">Giấy phép thiết lập : TTTĐTsố 42/GP-STTTT</p>
-        <p className="mb-4 text-xs text-black px-2">Chịu trách nhiệm nội dung : NGUYỄN TẤN HÙNG ANH</p>
-        <p className="mb-4 text-xs text-black px-2">Địa chỉ : Tầng 5, Tòa nhà FPT, 17 phố Duy Tân, Cầu Giấy, Hà Nội</p>
+        <p className="text-xs text-black px-2">Giấy phép thiết lập : TTTĐT số 42/GP-STTTT</p>
+        <p className="mb-3 text-xs text-black px-2">Chịu trách nhiệm nội dung : NGUYỄN TẤN HÙNG ANH</p>
+        {/* <p className="mb-4 text-xs text-black px-2 border-t-2 "><b></b> </p> */}
+        <p className="text-xs px-2 border-t-2 pt-4 pb-2 md:pb-0">PHAP LUAT SAO MULTIMEDIA MEDIA JOINT STOCK COMPANY -	&copy; newstartv 2021</p>
+        <div className="md:flex items-end pb-2 border-t-2 md:border-t-0">
+          <p className="text-sm md:text-xs md:font-normal font-bold text-bold text-black px-2 mb-4 mt-2 md:mb-0 md:mt-0">Địa chỉ :</p>
+          <p className="text-xs md:px-0 px-4">22 Đường 30b, khu phố 2, Phường Bình An, Quận 2, Thành phố Hồ Chí Minh, Việt Nam</p>
+        </div>
       </div>
-      <div className="w-1/3 pl-2 md:pl-4">
+      <div className="md:w-1/3 w-1/1 pl-2 md:pl-4">
         <p className="mb-4 text-sm font-bold text-bold text-black">Liên hệ</p>
         <ul className="flex border-b-2 pb-2 mb-2 px-2 text-xs">
             <li className="mr-4"><a  className="flex items-center  mr-4" href="mailto:info@nstartv.vn " title="Image from freeiconspng.com"><img src="https://www.freeiconspng.com/uploads/black-mail-icon-4.png" width="20" alt="Black mail Icon" />info@nstartv.vn</a></li>
