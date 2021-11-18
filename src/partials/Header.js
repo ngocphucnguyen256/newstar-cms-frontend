@@ -9,9 +9,11 @@ import searchIcon from '../images/search_icon.png'
 function Header() {
 
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
+  const [allNavOpen, setallNavOpen] = useState(false);
 
   const trigger = useRef(null);
   const mobileNav = useRef(null);
+  const allNav = useRef(null);
   const today = new Date().toString();
   // close the mobile menu on click outside
   useEffect(() => {
@@ -35,8 +37,35 @@ function Header() {
     return () => document.removeEventListener('keydown', keyHandler);
   });
 
+  // document.ready(function(){
+  //   ('#all-menu').click(function(){
+  //     ('#menu-toggle').fadeToggle('slow');
+  //   });
+  // });
+  
+  // close the mobile menu on click outside
+  useEffect(() => {
+    const clickHandler = ({ target }) => {
+      if (!allNav.current || !trigger.current) return;
+
+      if (!allNavOpen || allNav.current.contains(target) || trigger.current.contains(target)) return;
+      setallNavOpen(false);
+    };
+    document.addEventListener('click', clickHandler);
+    return () => document.removeEventListener('click', clickHandler);
+  });
+
+  // close the mobile menu if the esc key is pressed
+  useEffect(() => {
+    const keyHandler = ({ keyCode }) => {
+      if (!allNavOpen || keyCode !== 28) return;
+      setallNavOpen(false);
+    };
+    document.addEventListener('keydown', keyHandler);
+    return () => document.removeEventListener('keydown', keyHandler);
+  });
   return (
-    <header className="sticky top-0 md:-top-24 left-0 right-0 w-full z-30 bg-white text-black font-bold ">
+    <header className="sticky top-0 md:-top-24 left-0 right-0 w-full z-30 text-black font-bold ">
       
       <div className="max-w-7xl mx-auto">
   
@@ -141,7 +170,7 @@ function Header() {
                       <Moment date={today} format="dddd, Do MMMM YYYY" locale="vi" />
                       </div>
             </div>
-            <div className="flex-shrink-0 md:hidden">
+            <div className="flex-shrink-0 md:hidden ml-10 md:ml-0">
                         {/* Logo */}
                         <Link to="/" className="block" aria-label="star">
                           <img alt="star"  src={require('../logo/star_logo.png').default} className="md:w-28" width="70" height="auto"/>
@@ -184,65 +213,173 @@ function Header() {
 
 
 
-            <ul className="flex flex-grow justify-center flex-wrap items-center md:text-base lg:text-lg text-bold">
+            <ul className="relative flex flex-grow justify-center flex-wrap items-center text-xs text-bold h-8">
               <li>
-                <Link to="/" className=" text-black hover:text-purple-600 px-1 md:px-2 lg:px-3  py-1 lg:py-2 flex">
+                <Link to="/" className=" text-black hover:text-purple-600 px-2 py-1 flex">
                 Trang chủ
                 </Link>
               </li>
               <li>
-                <Link to="/newest" className=" text-black hover:text-purple-600 px-1 md:px-2 lg:px-3 py-1 lg:py-2 flex">Mới nhất
+                <Link to="/newest" className=" text-black hover:text-purple-600 px-2 py-1 flex">Mới nhất
 </Link>
               </li>
               <li>
-                <Link to="/kinh-te" className=" text-black hover:text-purple-600 px-1 md:px-2 lg:px-3 py-1 lg:py-2 flex">Kinh tế
+                <Link to="/kinh-te" className=" text-black hover:text-purple-600 px-2 py-1 flex">Kinh tế
 </Link>
               </li>
               <li>
-                <Link to="/giai-tri" className=" text-black hover:text-purple-600 px-1 md:px-2 lg:px-3 py-1 lg:py-2 flex">Giải trí 
+                <Link to="/giai-tri" className=" text-black hover:text-purple-600 px-2 py-1 flex">Giải trí 
 </Link>
               </li>
               {/* 1st level: hover */}
 
                 {/* 2nd level: hover */}
                 <li>
-                  <Link to="/cong-nghe" className=" text-black hover:text-purple-600 flex py-1 lg:py-2 px-1 md:px-2 lg:px-3">Công nghệ
+                  <Link to="/cong-nghe" className=" text-black hover:text-purple-600 flex py-1 px-2">Công nghệ
 </Link>
                 </li>
                 <li>
-                  <Link to="/the-thao" className=" text-black hover:text-purple-600 flex py-1 lg:py-2 px-1 md:px-2 lg:px-3">Thể thao
+                  <Link to="/the-thao" className=" text-black hover:text-purple-600 flex py-1 px-2">Thể thao
                 </Link>
                 </li>
                 <li>
-                  <Link to="/vh-xh" className=" text-black hover:text-purple-600 flex py-1 lg:py-2 px-1 md:px-2 lg:px-3">VH-XH</Link>
+                  <Link to="/vh-xh" className=" text-black hover:text-purple-600 flex py-1 px-2">VH-XH</Link>
                 </li>
                 <li>
-                  <Link to="/thoi-trang" className=" text-black hover:text-purple-600 flex py-1 lg:py-2 px-1 md:px-2 lg:px-3">Thời trang</Link>
+                  <Link to="/thoi-trang" className=" text-black hover:text-purple-600 flex py-1 px-2">Thời trang</Link>
                 </li>
                 <li>
-                  <Link to="/hang-hieu" className=" text-black hover:text-purple-600 flex py-1 lg:py-2 px-1 md:px-2 lg:px-3">Hàng Hiệu
+                  <Link to="/hang-hieu" className=" text-black hover:text-purple-600 flex py-1 px-2">Hàng Hiệu
 </Link>
                 </li>
                 <li>
-                  <Link to="/du-lich" className=" text-black hover:text-purple-600 flex py-1 lg:py-2 px-1 md:px-2 lg:px-3">Du lịch</Link>
+                  <Link to="/du-lich" className=" text-black hover:text-purple-600 flex py-1 px-2">Du lịch</Link>
                 </li>
                 <li>
-                  <Link to="/am-thuc" className=" text-black hover:text-purple-600 flex py-1 lg:py-2 px-1 md:px-2 lg:px-3">
+                  <Link to="/am-thuc" className=" text-black hover:text-purple-600 flex py-1 px-2">
 Ẩm thực</Link>
                 </li>
                 <li>
-                  <Link to="/song-khoe" className=" text-black hover:text-purple-600 flex py-1 lg:py-2 px-1 md:px-2 lg:px-3">Sống khỏe
+                  <Link to="/song-khoe" className=" text-black hover:text-purple-600 flex py-1 px-2">Sống khỏe
 </Link>
                 </li>
                 <li>
-                  <Link to="/video" className=" text-black hover:text-purple-600 flex py-1 lg:py-2 px-1 md:px-2 lg:px-3">Video</Link>
+                  <Link to="/video" className=" text-black hover:text-purple-600 flex py-1 px-2">Video</Link>
+                </li>
+                <li>
+                  <button ref={trigger} className={`hamburger ${allNavOpen && 'active'}`} aria-controls="mobile-nav" aria-expanded={allNavOpen} onClick={() => setallNavOpen(!allNavOpen)}>
+                    <span className="text-black hover:text-purple-600 flex py-1 px-2">Tất cả</span>
+                  </button>
                 </li>
 
+                <nav id="all-nav" ref={allNav} className="font-bold absolute top-full z-20 left-0 right-0 w-full py-6 transition-all duration-300 ease-in-out text-xs" style={allNavOpen ? { maxHeight: allNav.current.scrollHeight, opacity: 1 } : { maxHeight: 0, opacity: 0 } }>
+                  <div className="flex flex-grow justify-center flex-wrap items-center text-xs text-bold flex flex-wrap">
+                    <ul>
+                      <Link to="/" className=" text-black hover:text-purple-600 px-2 py-1 flex">Trang chủ</Link>
+                    </ul>
+                    <ul>
+                      <Link to="/newest" className=" text-black hover:text-purple-600 px-2 py-1 flex">Mới nhất</Link>
+                    </ul>
+                    <ul>
+                      <Link to="/kinh-te" className=" text-black hover:text-purple-600 px-2 py-1 flex">Kinh tế</Link>
+                    </ul>
+                    <ul>
+                      <Link to="/giai-tri" className=" text-black hover:text-purple-600 px-2 py-1 flex">Giải trí </Link>
+                    </ul>
+                    <ul>
+                      <Link to="/cong-nghe" className=" text-black hover:text-purple-600 flex py-1 px-2">Công nghệ</Link>
+                    </ul>
+                    <ul>
+                      <Link to="/the-thao" className=" text-black hover:text-purple-600 flex py-1 px-2">Thể thao</Link>
+                    </ul>
+                    <ul>
+                      <Link to="/vh-xh" className=" text-black hover:text-purple-600 flex py-1 px-2">VH-XH</Link>
+                    </ul>
+                    <ul>
+                      <Link to="/thoi-trang" className=" text-black hover:text-purple-600 flex py-1 px-2">Thời trang</Link>
+                    </ul>
+                    <ul>
+                      <Link to="/hang-hieu" className=" text-black hover:text-purple-600 flex py-1 px-2">Hàng Hiệu</Link>
+                    </ul>
+                    <ul>
+                      <Link to="/du-lich" className=" text-black hover:text-purple-600 flex py-1 px-2">Du lịch</Link>
+                    </ul>
+                    <ul>
+                      <Link to="/am-thuc" className=" text-black hover:text-purple-600 flex py-1 px-2">Ẩm thực</Link>
+                    </ul>
+                    <ul>
+                      <Link to="/song-khoe" className=" text-black hover:text-purple-600 flex py-1 px-2">Sống khỏe</Link>
+                    </ul>
+                    <ul>
+                      <Link to="/video" className=" text-black hover:text-purple-600 flex py-1 px-2">Video</Link>
+                    </ul>
+                    <ul>
+                      <Link to="/video" className=" text-black hover:text-purple-600 flex py-1 px-2">Menu1</Link>
+                    </ul>
+                </div >
+              </nav>
             </ul>
 
 
           </nav>
 
+          <div id="menu-toggle" className="hidden md:flex md:flex-grow border-b-2 font-bold">
+            <ul className="hidden flex flex-grow justify-center flex-wrap items-center text-xs text-bold">
+              
+            <li>
+                <Link to="/" className=" text-black hover:text-purple-600 px-2 py-1 flex">
+                Trang chủ
+                </Link>
+              </li>
+              <li>
+                <Link to="/newest" className=" text-black hover:text-purple-600 px-2 py-1 flex">Mới nhất
+</Link>
+              </li>
+              <li>
+                <Link to="/kinh-te" className=" text-black hover:text-purple-600 px-2 py-1 flex">Kinh tế
+</Link>
+              </li>
+              <li>
+                <Link to="/giai-tri" className=" text-black hover:text-purple-600 px-2 py-1 flex">Giải trí 
+</Link>
+              </li>
+              {/* 1st level: hover */}
+
+                {/* 2nd level: hover */}
+                <li>
+                  <Link to="/cong-nghe" className=" text-black hover:text-purple-600 flex py-1 px-2">Công nghệ
+</Link>
+                </li>
+                <li>
+                  <Link to="/the-thao" className=" text-black hover:text-purple-600 flex py-1 px-2">Thể thao
+                </Link>
+                </li>
+                <li>
+                  <Link to="/vh-xh" className=" text-black hover:text-purple-600 flex py-1 px-2">VH-XH</Link>
+                </li>
+                <li>
+                  <Link to="/thoi-trang" className=" text-black hover:text-purple-600 flex py-1 px-2">Thời trang</Link>
+                </li>
+                <li>
+                  <Link to="/hang-hieu" className=" text-black hover:text-purple-600 flex py-1 px-2">Hàng Hiệu
+</Link>
+                </li>
+                <li>
+                  <Link to="/du-lich" className=" text-black hover:text-purple-600 flex py-1 px-2">Du lịch</Link>
+                </li>
+                <li>
+                  <Link to="/am-thuc" className=" text-black hover:text-purple-600 flex py-1 px-2">
+Ẩm thực</Link>
+                </li>
+                <li>
+                  <Link to="/song-khoe" className=" text-black hover:text-purple-600 flex py-1 px-2">Sống khỏe
+</Link>
+                </li>
+                <li>
+                  <Link to="/video" className=" text-black hover:text-purple-600 flex py-1 px-2">Video</Link>
+                </li>
+            </ul>
+          </div>
 
 
       </div>
