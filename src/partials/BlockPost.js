@@ -32,9 +32,7 @@ const BlockPost =(props)=>{
 
     return(
         <article  className={`bg-white rounded-md  overflow-hidden mr-2 max-w-sm md:max-w-none ${mbNone? "" :"mb-4"} ${pbNone? "" :"pb-4"}  ${props.small? "max-h-52 sm:max-h-72 md:max-h-screen" : "max-h-80 sm:max-h-96  md:max-h-screen"} ${props.borderBottom ? "" : "" }`}>
-                  <h3 className="mb-2 md:mb-4 text-sm font-bold text-bold min-h-full">
-                      <Link  to={`/post/${data.slug}/${data.id}`} className=" text-black hover:text-purple-600 transition duration-150 ease-in-out overflow-ellipsis">{data.title}</Link>
-                  </h3>
+                 
                   {
                       !noImg?(
                         <figure className="mb-2 md:mb-4">
@@ -48,19 +46,21 @@ const BlockPost =(props)=>{
          
                   }
 
-      
+                  <h3 className="mb-2 md:mb-4 text-sm font-bold text-bold min-h-full">
+                      <Link  to={`/post/${data.slug}/${data.id}`} className=" text-black hover:text-purple-600 transition duration-150 ease-in-out overflow-ellipsis">{data.title}</Link>
+                  </h3>
 
                   
                     <p className="text-xs text-gray-40">
                      
-                    <Truncate
-                    lines={props.line}
-                    ellipsis={(
-                      <span>...<Link  to={`/post/${data.slug}/${data.id}`} 
-                      className=" text-black hover:text-purple-600 transition duration-150 ease-in-out overflow-ellipsis text-bold"> xem thêm</Link></span>
-                    )}>
-                    { data.description }
-                   </Truncate>
+                      <Truncate
+                      lines={props.line}
+                      ellipsis={(
+                        <span>...<Link  to={`/post/${data.slug}/${data.id}`} 
+                        className=" text-black hover:text-purple-600 transition duration-150 ease-in-out overflow-ellipsis text-bold"> xem thêm</Link></span>
+                      )}>
+                      { data.description }
+                    </Truncate>
                     </p>
 
  

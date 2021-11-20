@@ -59,8 +59,8 @@ const ortherPost = sortedList.slice(10)
     return(
         <div className="mt-10 flex border-b-2">
 
-            <div className="mb-10  justify-between items-center border-r-2 pr-2 md:pr-4 w-1/3">
-            <h3 className="mb-2 border-b-2 border-red-400 text-bold md:text-2xl lg:text-3xl ">Mới nhất</h3>   
+            <div className="mb-10  justify-between items-center border-r-2 pr-2 md:pr-4 md:w-1/3 w-1/1">
+            <h3 className="mb-2 border-b-2 border-red-400 text-bold md:text-2xl lg:text-3xl font-bold">Mới nhất</h3>   
             {
                 newPost.map(post =>(
                     <BlockPost key={post.id} data={post} small borderBottom headingTop line={5}/>
@@ -69,7 +69,7 @@ const ortherPost = sortedList.slice(10)
             }
     
             </div>
-            <div className="w-2/3 pl-2 md:pl-4">
+            <div className="md:w-2/3 w-1/1 pl-2 md:pl-4">
                 <CategoryPostList keywords={"Kinh tế"} data={ortherPost}  small/>
                 <CategoryPostList keywords={"Giải trí"} data={ortherPost}  small/>
                 <CategoryPostList keywords={"Công nghệ"} data={ortherPost} small/>
