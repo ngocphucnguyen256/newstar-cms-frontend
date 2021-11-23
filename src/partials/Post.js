@@ -41,7 +41,7 @@ const Post =(props)=>{
             {
               headingTop?(
                 <>
-                <h3 className=" mb-2 text-sm sm:text-lg lg:text-xl text-bold">
+                <h3 className="mb-2 text-sm sm:text-lg lg:text-xl font-black">
                         <Link to={`/post/${data.slug}/${data.id}`} className="hover:text-blue-600 transition duration-150 ease-in-out">{data.title}</Link>
                 </h3>
                 <p className={`${noImg ? "w-0" : " md:w-1/1"}  w-1/1 text-xs sm:text-sm md:text-base`}>
@@ -73,7 +73,7 @@ const Post =(props)=>{
                         ) : (
                           <></>
                         )}
-                        <h3 className=" mb-2 text-sm sm:text-lg lg:text-xl text-bold">
+                        <h3 className=" mb-2 text-sm sm:text-lg lg:text-xl font-bold">
                                 <Link to={`/post/${data.slug}/${data.id}`} className="hover:text-blue-600 transition duration-150 ease-in-out">{data.title}</Link>
                         </h3>
                         <p> {data.description}</p>

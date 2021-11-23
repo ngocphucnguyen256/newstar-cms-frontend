@@ -50,9 +50,9 @@ const MiddlePostList =()=>{
         return copy
     })
 
-const sortedList= formatList.sort((a,b) =>b.date.getTime() -  a.date.getTime())
-const newPost = sortedList.slice(0,10)
-const ortherPost = sortedList.slice(10)
+    const sortedList= formatList.sort((a,b) =>b.date.getTime() -  a.date.getTime())
+    const newPost = sortedList.slice(0,10)
+    const ortherPost = sortedList.slice(10)
 
 
 

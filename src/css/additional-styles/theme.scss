@@ -10,7 +10,9 @@ button:focus,
 .form-radio:focus {
     outline: 2px solid rgba(0, 112, 244, 0.5);
 }
-
+button {
+    z-index: 1 !important;
+}
 .form-input,
 .form-textarea,
 .form-multiselect,
