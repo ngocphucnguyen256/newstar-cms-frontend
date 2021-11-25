@@ -56,7 +56,7 @@ const Newest =()=>{
 
           <Header />
           <main className="flex-grow">
-                <h2 className="text-bold text-4xl my-4">Mới nhất</h2>
+                <h2 className="text-bold text-4xl my-4 font-bold">Mới nhất</h2>
  
                         <div className="w-1/1">
                             <CategoryPostList keywords={"Kinh tế"} grid/>

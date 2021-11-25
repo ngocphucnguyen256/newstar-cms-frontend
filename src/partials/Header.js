@@ -65,9 +65,9 @@ function Header() {
     return () => document.removeEventListener('keydown', keyHandler);
   });
   return (
-    <header className="sticky top-0 md:-top-24 left-0 right-0 w-full z-30 text-black font-bold ">
+    <header className="sticky top-0 md:-top-24 left-0 right-0 w-full z-50 text-black font-bold ">
       
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto ">
   
         <div className="flex items-center justify-between  border-b-2">
             <div className="flex justify-center items-center md:pt-1">
@@ -202,7 +202,7 @@ function Header() {
         </div>
         
           {/* Desktop navigation */}
-          <nav className="hidden md:flex md:flex-grow border-b-2 font-bold">
+          <nav className="hidden md:flex md:flex-grow border-b-2 font-bold bg-gray-400 ">
 
             {/* Desktop menu links */}
 
@@ -272,7 +272,7 @@ function Header() {
                   </button>
                 </li>
 
-                <nav id="all-nav" ref={allNav} className="font-bold absolute top-full z-20 left-0 right-0 w-full py-6 transition-all duration-300 ease-in-out text-xs" style={allNavOpen ? { maxHeight: allNav.current.scrollHeight, opacity: 1 } : { maxHeight: 0, opacity: 0 } }>
+                <nav id="all-nav" ref={allNav} className="font-bold absolute top-full z-20 left-0 right-0 w-full py-6 transition-all duration-300 ease-in-out text-xs bg-gray-400 " style={allNavOpen ? { maxHeight: allNav.current.scrollHeight, opacity: 1 } : { maxHeight: 0, opacity: 0 } }>
                   <div className="flex flex-grow justify-center flex-wrap items-center text-xs text-bold flex flex-wrap">
                     <ul>
                       <Link to="/" className=" text-black hover:text-purple-600 px-2 py-1 flex">Trang chủ</Link>
